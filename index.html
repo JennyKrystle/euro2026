@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>🇪🇺 Our European Adventure · September 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+  --bg:#f8f5f0;--card:#fff;--dark:#1c1915;--mid:#5a4f45;--lt:#9a8a7d;
+  --border:#e5ddd5;--gold:#b8862a;--gold-bg:#fdf6e3;--red:#c03228;--red-bg:#fdf0ef;
+  --blue:#2a6080;--blue-bg:#edf4f8;--green:#3d6b3a;--green-bg:#edf4ec;--r:12px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--dark);font-family:'Jost',sans-serif;font-weight:300;line-height:1.7;font-size:15px}
+.hero{background:var(--dark);color:#f8f5f0;padding:52px 20px 44px;text-align:center}
+.hero-flag{font-size:2rem;margin-bottom:10px;letter-spacing:6px}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,8vw,3.2rem);font-weight:400;line-height:1.1}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero-sub{margin-top:8px;font-size:.8rem;color:rgba(248,245,240,.6);font-style:italic}
+.hero-dates{margin-top:6px;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(248,245,240,.4)}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:18px}
+.pill{padding:5px 14px;border-radius:100px;font-size:.72rem;font-weight:500;letter-spacing:.04em}
+.pill-blue{background:var(--blue);color:#fff}
+.pill-red{background:var(--red);color:#fff}
+.pill-gold{background:var(--gold);color:#fff}
+.pill-green{background:var(--green);color:#fff}
+.progress{position:fixed;top:0;left:0;height:2px;background:var(--gold);width:0;z-index:200;transition:width .1s linear}
+.nav{position:sticky;top:0;z-index:100;background:var(--dark);display:flex;overflow-x:auto;scrollbar-width:none;border-bottom:1px solid rgba(255,255,255,.08)}
+.nav::-webkit-scrollbar{display:none}
+.nav a{color:rgba(248,245,240,.5);text-decoration:none;padding:12px 14px;font-size:.65rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;flex-shrink:0;border-bottom:2px solid transparent;transition:all .2s}
+.nav a:hover,.nav a.active{color:var(--gold);border-bottom-color:var(--gold)}
+.wrap{max-width:680px;margin:0 auto;padding:0 16px 60px}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;padding:36px 0 4px;color:var(--dark)}
+.section-title em{font-style:italic;color:var(--gold)}
+.section-sub{font-size:.78rem;color:var(--lt);margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+.day{border:1px solid var(--border);border-radius:var(--r);margin-bottom:16px;overflow:hidden;background:var(--card);scroll-margin-top:52px}
+.day-head{display:flex;align-items:center;gap:12px;padding:13px 18px;background:#f5f1ec;border-bottom:1px solid var(--border)}
+.day-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;line-height:1;min-width:36px;color:var(--dark)}
+.nl .day-num{color:var(--blue)} .be .day-num{color:var(--red)}
+.de .day-num{color:var(--gold)} .ch .day-num{color:var(--green)}
+.day-info{flex:1}
+.day-date{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--lt);margin-bottom:1px}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;line-height:1.3}
+.day-tag{margin-left:auto;padding:4px 12px;border-radius:100px;font-size:.65rem;font-weight:600;white-space:nowrap;flex-shrink:0;color:#fff;background:var(--dark)}
+.nl .day-tag{background:var(--blue)} .be .day-tag{background:var(--red)}
+.de .day-tag{background:var(--gold)} .ch .day-tag{background:var(--green)}
+.day-body{padding:16px 18px}
+.time-block{display:flex;gap:12px;margin-bottom:14px}
+.time-block:last-child{margin-bottom:0}
+.time-label{font-size:.62rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--lt);min-width:58px;padding-top:3px;flex-shrink:0}
+.time-content{flex:1}
+.time-content h3{font-size:.88rem;font-weight:600;margin-bottom:2px;color:var(--dark)}
+.time-content p{font-size:.8rem;color:var(--mid);margin-top:2px;line-height:1.55}
+.time-content strong{color:var(--dark);font-weight:600}
+.divider{border:none;border-top:1px solid var(--border);margin:12px 0}
+.food-block{background:#f5f1ec;border-radius:8px;padding:12px 14px;margin:12px 0 4px}
+.food-label{font-size:.62rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--lt);margin-bottom:8px}
+.food-row{display:flex;gap:10px;padding:6px 0;border-bottom:1px solid var(--border);align-items:flex-start}
+.food-row:last-child{border-bottom:none}
+.food-time{font-size:.65rem;font-weight:600;color:var(--gold);min-width:64px;flex-shrink:0;padding-top:2px;text-transform:uppercase;letter-spacing:.04em}
+.food-info{font-size:.8rem;color:var(--mid);flex:1;line-height:1.5}
+.food-info strong{color:var(--dark);font-weight:600}
+.hotel-card{border:1px solid var(--border);border-radius:8px;margin:12px 0 4px;overflow:hidden;background:var(--bg)}
+.hotel-head{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--dark);color:#f8f5f0}
+.hotel-head .h-icon{font-size:1rem}
+.hotel-head .h-name{font-size:.84rem;font-weight:500;flex:1}
+.hotel-head .h-badge{font-size:.62rem;font-weight:600;background:var(--green);color:#fff;padding:2px 10px;border-radius:100px}
+.h-row{display:flex;gap:10px;padding:8px 14px;border-bottom:1px solid var(--border);font-size:.78rem}
+.h-row:last-child{border-bottom:none}
+.h-key{min-width:88px;flex-shrink:0;color:var(--lt);font-size:.65rem;text-transform:uppercase;letter-spacing:.08em;padding-top:2px}
+.h-val{color:var(--mid);flex:1;line-height:1.5}
+.h-val strong{color:var(--dark);font-weight:600}
+.step{display:flex;gap:10px;margin-bottom:11px}
+.step:last-child{margin-bottom:0}
+.step-num{background:var(--dark);color:#fff;border-radius:100px;font-size:.62rem;font-weight:700;padding:2px 8px;height:20px;line-height:16px;flex-shrink:0;margin-top:2px;white-space:nowrap}
+.nl .step-num{background:var(--blue)} .be .step-num{background:var(--red)}
+.de .step-num{background:var(--gold)} .ch .step-num{background:var(--green)}
+.step-body{flex:1}
+.step-name{font-weight:600;font-size:.84rem;color:var(--dark);margin-bottom:2px}
+.step-walk{font-size:.7rem;color:var(--gold);font-weight:500;margin-bottom:3px}
+.step-note{font-size:.78rem;color:var(--mid);line-height:1.5}
+.step-note strong{color:var(--dark);font-weight:600}
+.alert{border-radius:8px;padding:12px 14px;margin:12px 0 4px;border-left:3px solid}
+.alert-gold{background:var(--gold-bg);border-color:var(--gold)}
+.alert-blue{background:var(--blue-bg);border-color:var(--blue)}
+.alert-green{background:var(--green-bg);border-color:var(--green)}
+.alert-red{background:var(--red-bg);border-color:var(--red)}
+.alert h4{font-size:.78rem;font-weight:600;margin-bottom:4px}
+.alert-gold h4{color:var(--gold)}.alert-blue h4{color:var(--blue)}.alert-green h4{color:var(--green)}.alert-red h4{color:var(--red)}
+.alert p{font-size:.78rem;color:var(--mid);line-height:1.55}
+.alert strong{color:var(--dark);font-weight:600}
+.btns{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.hotel-head .pin{color:var(--gold)}
+.pin{color:var(--gold);text-decoration:none;margin-left:5px;font-size:.85em}
+.dir{display:inline-block;margin-left:7px;color:var(--gold);text-decoration:none;font-size:.68rem;font-weight:500;border:1px solid var(--border);border-radius:100px;padding:1px 9px;background:#fff;vertical-align:2px;white-space:nowrap}
+a.btn{display:inline-flex;align-items:center;text-decoration:none;padding:7px 14px;border-radius:100px;font-size:.72rem;font-weight:500;transition:opacity .15s}
+a.btn:active{opacity:.7}
+a.btn.solid{background:var(--dark);color:#fff!important}
+a.btn.outline{background:transparent;color:var(--dark)!important;border:1.5px solid var(--border)}
+.train-note{background:var(--dark);color:#f8f5f0;border-radius:8px;padding:13px 15px;font-size:.8rem;line-height:1.6;margin:12px 0 4px}
+.train-note strong{color:var(--gold)}
+.route{display:flex;align-items:center;justify-content:space-between;font-size:.72rem;letter-spacing:.06em;margin:6px 0 4px;color:#f8f5f0}
+.route .line{flex:1;border-top:1px dashed rgba(248,245,240,.35);margin:0 10px;position:relative;text-align:center}
+.route .line span{position:relative;top:-11px;background:var(--dark);padding:0 8px;font-size:.62rem;color:var(--gold)}
+.tips{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0 40px}
+@media(max-width:460px){.tips{grid-template-columns:1fr}}
+.tip-card{border:1px solid var(--border);border-radius:8px;padding:13px 14px;background:var(--card)}
+.tip-card h4{font-size:.8rem;font-weight:600;margin-bottom:4px;color:var(--dark)}
+.tip-card p{font-size:.76rem;color:var(--mid);line-height:1.55}
+.tip-card strong{color:var(--dark);font-weight:600}
+.book-row{display:flex;gap:10px;padding:11px 0;border-bottom:1px solid var(--border);align-items:flex-start}
+.book-row:last-child{border-bottom:none}
+.book-when{font-size:.62rem;font-weight:700;min-width:64px;flex-shrink:0;padding:3px 0;text-align:center;border-radius:100px;color:#fff;text-transform:uppercase;letter-spacing:.05em}
+.bk-now{background:var(--red)} .bk-soon{background:var(--gold)} .bk-later{background:var(--green)}
+.book-info{font-size:.8rem;color:var(--mid);flex:1;line-height:1.5}
+.book-info strong{color:var(--dark);font-weight:600}
+.book-info a{color:var(--gold);text-decoration:none}
+#totop{position:fixed;right:16px;bottom:16px;width:38px;height:38px;border-radius:100px;background:var(--dark);color:var(--gold);border:none;font-size:1rem;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .25s;z-index:150}
+#totop.show{opacity:.92;pointer-events:auto}
+footer{text-align:center;padding:24px 16px 46px;color:var(--lt);font-size:.78rem}
+footer strong{color:var(--mid)}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<div class="hero">
+  <div class="hero-flag">🇳🇱 🇧🇪 🇩🇪 🇨🇭</div>
+  <h1>Our European <em>Adventure</em></h1>
+  <p class="hero-sub">Open this. You know exactly what to do.</p>
+  <p class="hero-dates">September 9 – 30 · Jenny &amp; Prince John</p>
+  <div class="hero-pills">
+    <span class="pill pill-blue">🌷 Amsterdam Canals</span>
+    <span class="pill pill-red">🍫 Belgian Fairytales</span>
+    <span class="pill pill-gold">⛪ Rhine &amp; Cathedrals</span>
+    <span class="pill pill-green">🏔️ The Swiss Alps</span>
+  </div>
+</div>
+
+<nav class="nav" id="nav">
+  <a href="#day0">Sep 9 ✈</a><a href="#day1">Sep 10</a><a href="#day2">Sep 11</a><a href="#day3">Sep 12</a>
+  <a href="#day4">Sep 13</a><a href="#day5">Sep 14</a><a href="#day6">Sep 15</a>
+  <a href="#day7">Sep 16</a><a href="#day8">Sep 17</a><a href="#day9">Sep 18</a>
+  <a href="#day10">Sep 19</a><a href="#day11">Sep 20</a><a href="#day12">Sep 21</a>
+  <a href="#day13">Sep 22</a><a href="#day14">Sep 23</a><a href="#day15">Sep 24</a>
+  <a href="#day16">Sep 25</a><a href="#day17">Sep 26</a><a href="#day18">Sep 27</a>
+  <a href="#day19">Sep 28</a><a href="#day20">Sep 29 ✈</a>
+  <a href="#bookings">Bookings</a><a href="#tips">Tips</a>
+</nav>
+
+<div class="wrap">
+
+<h2 class="section-title">Getting There · <em>Singapore Airlines</em></h2>
+<p class="section-sub">Booking Ref FCBJHW · 2 passengers · Manila → Amsterdam, home from Zurich</p>
+
+<div class="day" id="day0">
+  <div class="day-head"><div class="day-num">✈</div><div class="day-info"><div class="day-date">Wednesday · September 9</div><div class="day-title">Manila → Singapore → Amsterdam</div></div><div class="day-tag">Fly</div></div>
+  <div class="day-body">
+    <div class="train-note">
+      <div class="route"><span>MNL T3</span><div class="line"><span>SQ 921</span></div><span>SIN T3</span></div>
+      🛫 <strong>18:35</strong> Manila · 🛬 22:20 Singapore · Airbus A350 · then layover 1h 35m, same terminal
+      <div class="route" style="margin-top:12px"><span>SIN T3</span><div class="line"><span>SQ 324</span></div><span>AMS</span></div>
+      🛫 <strong>23:55</strong> Singapore · 🛬 07:15 next morning · Boeing 777-300ER · ~13 hrs
+    </div>
+    <div class="time-block"><div class="time-label">15:00</div><div class="time-content"><h3>Be at NAIA Terminal 3 <a class="pin" href="https://maps.google.com/?q=NAIA+Terminal+3+Manila" target="_blank" rel="noopener">📍</a></h3><p>Check in, drop the bags (checked luggage this time, no 7 kg stress), then relax at the lounge. Pack real layers in the suitcase: the Swiss summits will be at freezing.</p></div></div>
+    <div class="time-block"><div class="time-label">23:55</div><div class="time-content"><h3>Sleep on SQ 324, it is your jet lag cure</h3><p>Eat the supper service, then sleep as long as you can. Amsterdam is 6 hours behind Manila, so landing rested at 07:15 sets up the whole first day.</p></div></div>
+    <div class="alert alert-gold"><h4>📄 Documents in one place</h4><p>Passports with Schengen visas, this guide saved offline, hotel screenshots, return ticket. Schiphol immigration may ask for your first hotel and onward plans, and it is all in the <strong>Bookings</strong> tab of this guide.</p></div>
+  </div>
+</div>
+
+<h2 class="section-title">The Netherlands · <em>Amsterdam</em></h2>
+<p class="section-sub">Sep 10 – 13 · 3 nights · Residence Flower Market, on the canal ring</p>
+
+<div class="day nl" id="day1">
+  <div class="day-head"><div class="day-num">1</div><div class="day-info"><div class="day-date">Thursday · September 10</div><div class="day-title">Arrival · Check In · First Canal Walk</div></div><div class="day-tag">Amsterdam</div></div>
+  <div class="day-body">
+    <div class="time-block"><div class="time-label">07:15</div><div class="time-content"><h3>🛬 Land at Schiphol <a class="pin" href="https://maps.google.com/?q=Schiphol+Airport" target="_blank" rel="noopener">📍</a></h3><p>Immigration first (your Schengen entry stamp), then bags. Take your time, today has no schedule.</p></div></div>
+    <div class="time-block"><div class="time-label">08:45</div><div class="time-content"><h3>🚆 Train Schiphol → Amsterdam Centraal <a class="dir" href="https://www.google.com/maps/dir/?api=1&origin=Schiphol+Airport&destination=Amsterdam+Centraal&travelmode=transit" target="_blank" rel="noopener">🧭 Route</a></h3><p>15 minutes, every few minutes. Just tap a contactless card or phone at the gates (OVpay, ~EUR 4.90 each) and tap out at Centraal. Then tram 2 or 12 to <strong>Koningsplein</strong><a class="pin" href="https://maps.google.com/?q=Koningsplein+Amsterdam" target="_blank" rel="noopener">📍</a> 2 minutes on foot to the hotel <a class="dir" href="https://www.google.com/maps/dir/?api=1&origin=Koningsplein+Amsterdam&destination=Bloemenmarkt+91+Amsterdam&travelmode=walking" target="_blank" rel="noopener">🧭 Walk</a>. Drop bags at reception, check-in is mid afternoon.</p></div></div>
+    <div class="time-block"><div class="time-label">10:30</div><div class="time-content"><h3>☕ Slow coffee + fresh stroopwafel</h3><p>Then wander the <strong>Bloemenmarkt</strong><a class="pin" href="https://maps.google.com/?q=Bloemenmarkt+Amsterdam" target="_blank" rel="noopener">📍</a> floating flower market, literally at your doorstep.</p></div></div>
+    <div class="time-block"><div class="time-label">13:00</div><div class="time-content"><h3>😴 Check in, then nap</h3><p>Two hours max, set an alarm. This is the secret to beating the jet lag by tonight.</p></div></div>
+    <div class="time-block"><div class="time-label">17:30</div><div class="time-content"><h3>🌇 Golden hour canal walk</h3><p>Singel<a class="pin" href="https://maps.google.com/?q=Singel+Amsterdam" target="_blank" rel="noopener">📍</a> → Herengracht<a class="pin" href="https://maps.google.com/?q=Herengracht+Amsterdam" target="_blank" rel="noopener">📍</a> → the Nine Streets<a class="pin" href="https://maps.google.com/?q=De+9+Straatjes+Amsterdam" target="_blank" rel="noopener">📍</a>. No destination, just bridges, gables and bicycle bells. Dinner canal-side, early night: tomorrow has timed tickets.</p></div></div>
+    <div class="hotel-card">
+      <div class="hotel-head"><span class="h-icon">🏨</span><span class="h-name">Residence Flower Market · Sep 10–13 <a class="pin" href="https://maps.google.com/?q=Residence+Flower+Market+Bloemenmarkt+91+Amsterdam" target="_blank" rel="noopener">📍</a></span><span class="h-badge">✅ Booked</span></div>
+      <div class="h-row"><div class="h-key">Address</div><div class="h-val">Bloemenmarkt 91, 1017 GS Amsterdam · above the flower market</div></div>
+      <div class="h-row"><div class="h-key">Guests</div><div class="h-val">3 nights · <strong>3 travelers</strong></div></div>
+      <div class="h-row"><div class="h-key">Booking Ref</div><div class="h-val"><strong>5685419739</strong> · Booking.com</div></div>
+    </div>
+    <div class="food-block"><div class="food-label">🍽️ Breakfast · Lunch · Dinner</div>
+      <div class="food-row"><div class="food-time">Breakfast</div><div class="food-info">On board SQ 324 before landing.</div></div>
+      <div class="food-row"><div class="food-time">Lunch</div><div class="food-info"><strong>Fabel Friet</strong><a class="pin" href="https://maps.google.com/?q=Fabel+Friet+Runstraat+Amsterdam" target="_blank" rel="noopener">📍</a> on Runstraat, 6 minutes from the hotel: THE TikTok-famous Amsterdam fries, get the parmesan + truffle mayo. The queue moves in ~10 minutes and it is worth it.</div></div>
+      <div class="food-row"><div class="food-time">Dinner</div><div class="food-info"><strong>De Belhamel</strong><a class="pin" href="https://maps.google.com/?q=De+Belhamel+Brouwersgracht+60+Amsterdam" target="_blank" rel="noopener">📍</a> the most beautiful Art Nouveau dining room in the city, at a canal corner on Brouwersgracht, or Indonesian rijsttafel at <strong>Sampurna</strong><a class="pin" href="https://maps.google.com/?q=Sampurna+Singel+498+Amsterdam" target="_blank" rel="noopener">📍</a> at the north end of your flower market, 2 minutes from the door: 35 years of family recipes, open daily, book a table.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="day nl" id="day2">
+  <div class="day-head"><div class="day-num">2</div><div class="day-info"><div class="day-date">Friday · September 11</div><div class="day-title">Anne Frank House · Van Gogh Museum</div></div><div class="day-tag">Amsterdam</div></div>
+  <div class="day-body">
+    <div class="alert alert-red"><h4>⚠️ Both are timed entry and both sell out</h4><p>Anne Frank House releases tickets exactly <strong>6 weeks ahead, every Tuesday 10:00 AM Dutch time (4:00 PM Manila)</strong>. For Friday Sep 11 that means the release around <strong>Tuesday, July 28</strong>. Set the alarm now and watch that Tuesday and the next, it sells out in minutes. Book Van Gogh as soon as September opens.</p></div>
+    <div class="time-block"><div class="time-label">09:30</div><div class="time-content"><h3>Relaxed hotel morning</h3><p>Breakfast nearby, no rush, the first slot is late morning.</p></div></div>
+    <div class="time-block"><div class="time-label">11:00</div><div class="time-content"><h3>🕯️ Anne Frank House <a class="pin" href="https://maps.google.com/?q=Anne+Frank+House+Westermarkt+20+Amsterdam" target="_blank" rel="noopener">📍</a></h3><p>15 minute canal walk from the hotel <a class="dir" href="https://www.google.com/maps/dir/?api=1&origin=Bloemenmarkt+91+Amsterdam&destination=Anne+Frank+House+Amsterdam&travelmode=walking" target="_blank" rel="noopener">🧭 Walk</a>. Allow 1.5 hours inside. Quiet, heavy, unforgettable. Bags larger than A4 are not allowed, so travel light today.</p></div></div>
+    <div class="time-block"><div class="time-label">13:00</div><div class="time-content"><h3>🥧 Lunch in the Jordaan</h3><p><strong>Winkel 43</strong><a class="pin" href="https://maps.google.com/?q=Winkel+43+Noordermarkt+43+Amsterdam" target="_blank" rel="noopener">📍</a> at Noordermarkt, right next door: sandwich first, then their famous warm appeltaart met slagroom. Trust me on this one.</p></div></div>
+    <div class="time-block"><div class="time-label">14:45</div><div class="time-content"><h3>🎨 Van Gogh Museum <a class="pin" href="https://maps.google.com/?q=Van+Gogh+Museum+Museumplein+6+Amsterdam" target="_blank" rel="noopener">📍</a></h3><p>Tram to Museumplein<a class="pin" href="https://maps.google.com/?q=Museumplein+Amsterdam" target="_blank" rel="noopener">📍</a> for a ~15:00 slot. Two hours, sunflowers and all. Photo stop on the Museumplein lawn after.</p></div></div>
+    <div class="time-block"><div class="time-label">19:30</div><div class="time-content"><h3>🍽️ Dinner at Foodhallen <a class="pin" href="https://maps.google.com/?q=Foodhallen+Amsterdam" target="_blank" rel="noopener">📍</a></h3><p>The famous indoor food hall in Oud-West, an easy tram from Museumplein: 20+ stalls under one roof, everyone finds their thing.</p></div></div>
+    <div class="food-block"><div class="food-label">🍽️ Breakfast · Lunch · Dinner</div>
+      <div class="food-row"><div class="food-time">Breakfast</div><div class="food-info">Coffee and pastry near the hotel.</div></div>
+      <div class="food-row"><div class="food-time">Lunch</div><div class="food-info"><strong>Winkel 43</strong>, Noordermarkt 43.</div></div>
+      <div class="food-row"><div class="food-time">Dinner</div><div class="food-info"><strong>Foodhallen</strong><a class="pin" href="https://maps.google.com/?q=Foodhallen+Amsterdam" target="_blank" rel="noopener">📍</a>: start with the bitterballen at <strong>De Ballenbar</strong> (the TikTok pick), then wander the stalls.</div></div>
+    </div>
+    <div class="btns">
+      <a class="btn outline" href="https://www.annefrank.org/en/museum/tickets/" target="_blank" rel="noopener">🎟️ AF tickets</a>
+      <a class="btn outline" href="https://www.vangoghmuseum.nl/en/visit/tickets" target="_blank" rel="noopener">🎟️ VG tickets</a>
+    </div>
+  </div>
+</div>
+
+<div class="day nl" id="day3">
+  <div class="day-head"><div class="day-num">3</div><div class="day-info"><div class="day-date">Saturday · September 12</div><div class="day-title">Jordaan · Nine Streets · Farewell Dinner</div></div><div class="day-tag">Amsterdam</div></div>
+  <div class="day-body">
+    <div class="time-block"><div class="time-label">10:00</div><div class="time-content"><h3>😴 Sleep in, then Jordaan brunch</h3><p>Your slow Amsterdam day. Nowhere to be.</p></div></div>
+    <div class="time-block"><div class="time-label">11:30</div><div class="time-content"><h3>🌸 Jordaan side canals</h3><p><strong>Egelantiersgracht</strong><a class="pin" href="https://maps.google.com/?q=Egelantiersgracht+Amsterdam" target="_blank" rel="noopener">📍</a> and <strong>Bloemgracht</strong><a class="pin" href="https://maps.google.com/?q=Bloemgracht+Amsterdam" target="_blank" rel="noopener">📍</a> are the prettiest: leaning houses, flower boxes, cats in windows.</p></div></div>
+    <div class="time-block"><div class="time-label">13:30</div><div class="time-content"><h3>🛍️ De 9 Straatjes, the Nine Streets <a class="pin" href="https://maps.google.com/?q=De+9+Straatjes+Amsterdam" target="_blank" rel="noopener">📍</a></h3><p>Boutique and vintage shopping across nine tiny canal-crossing streets. Souvenir headquarters for the Dutch leg.</p></div></div>
+    <div class="time-block"><div class="time-label">16:00</div><div class="time-content"><h3>⛴️ Optional 1 hour canal cruise</h3><p>From Rokin<a class="pin" href="https://maps.google.com/?q=Rokin+canal+cruise+Amsterdam" target="_blank" rel="noopener">📍</a>, 5 minutes from the hotel, or simply one last golden-hour loop on foot.</p></div></div>
+    <div class="time-block"><div class="time-label">19:00</div><div class="time-content"><h3>🥂 Farewell-to-Amsterdam dinner with your friends</h3><p>Make it a good one. Then a light repack at the hotel so tomorrow's checkout is painless. Belgium next.</p></div></div>
+    <div class="food-block"><div class="food-label">🍽️ Breakfast · Lunch · Dinner</div>
+      <div class="food-row"><div class="food-time">Brunch</div><div class="food-info"><strong>PLUK</strong><a class="pin" href="https://maps.google.com/?q=PLUK+Reestraat+Amsterdam" target="_blank" rel="noopener">📍</a> in the Nine Streets, the pastel Instagram-brunch favorite, expect a short queue.</div></div>
+      <div class="food-row"><div class="food-time">Snack</div><div class="food-info">The warm <strong>Van Stapele</strong><a class="pin" href="https://maps.google.com/?q=Van+Stapele+Koekmakerij+Heisteeg+4+Amsterdam" target="_blank" rel="noopener">📍</a> chocolate cookie (Heisteeg, 3 minutes from the hotel, the most famous cookie in the Netherlands), plus a fresh stroopwafel from <strong>van Wonderen</strong><a class="pin" href="https://maps.google.com/?q=Van+Wonderen+Stroopwafels+Kalverstraat+Amsterdam" target="_blank" rel="noopener">📍</a>, or poffertjes wherever you see them.</div></div>
+      <div class="food-row"><div class="food-time">Dinner</div><div class="food-info"><strong>Moeders</strong><a class="pin" href="https://maps.google.com/?q=Moeders+Rozengracht+251+Amsterdam" target="_blank" rel="noopener">📍</a> Dutch home cooking with walls of family photos (book ahead), or <strong>The Pantry</strong><a class="pin" href="https://maps.google.com/?q=The+Pantry+Leidsekruisstraat+21+Amsterdam" target="_blank" rel="noopener">📍</a> for classic Dutch comfort food, the bitterballen there are famous.</div></div>
+    </div>
+  </div>
+</div>
+
+<h2 class="section-title">Belgium · <em>Antwerp, Brugge &amp; Gent</em></h2>
+<p class="section-sub">Sep 13 – 16 · 3 nights · a&amp;o Antwerpen Centraal, beside the station for easy day trips</p>
+
+<div class="day be" id="day4">
+  <div class="day-head"><div class="day-num">4</div><div class="day-info"><div class="day-date">Sunday · September 13</div><div class="day-title">Train to Antwerp · Cathedral · Grote Markt</div></div><div class="day-tag">Belgium</div></div>
+  <div class="day-body">
+    <div class="time-block"><div class="time-label">10:00</div><div class="time-content"><h3>Checkout by 11:00, Metro 52 from Rokin to Zuid</h3><p>Rokin station is a 4 minute walk from the hotel, and the metro runs direct to Amsterdam Zuid in ~10 minutes. Pastry in hand for the platform.</p></div></div>
+    <div class="time-block"><div class="time-label">11:30</div><div class="time-content"><h3>🚆 Amsterdam Zuid → Antwerpen-Centraal <a class="dir" href="https://www.google.com/maps/dir/?api=1&origin=Amsterdam+Zuid&destination=Antwerpen-Centraal&travelmode=transit" target="_blank" rel="noopener">🧭 Route</a></h3><p>Take the <strong>Eurocity Direct</strong>: 1h 23m, 16 departures a day, open seating, Saver fares from <strong>EUR 20</strong> at nsinternational.com (book from "Amsterdam Zuid"). Skip Eurostar, it is the same journey for double the price. Either way you step out into one of the most beautiful stations on earth: look up, the dome is the first sight of Belgium.</p></div></div>
+    <div class="time-block"><div class="time-label">14:00</div><div class="time-content"><h3>🏨 Check in, 2 minutes from the platform</h3><p>Then stroll the <strong>Meir</strong><a class="pin" href="https://maps.google.com/?q=Meir+Antwerp" target="_blank" rel="noopener">📍</a> shopping street toward the old town, 20 minutes of window-shopping.</p></div></div>
+    <div class="time-block"><div class="time-label">16:00</div><div class="time-content"><h3>⛪ Cathedral of Our Lady <a class="pin" href="https://maps.google.com/?q=Cathedral+of+Our+Lady+Antwerp" target="_blank" rel="noopener">📍</a></h3><p>Belgium's tallest Gothic tower with four Rubens masterpieces inside. It is a Sunday: tourist entry opens <strong>13:00–17:00</strong> (after services), ~EUR 12, so the 16:00 slot works, just do not drift later.</p></div></div>
+    <div class="time-block"><div class="time-label">17:15</div><div class="time-content"><h3>🏛️ Grote Markt at golden hour <a class="pin" href="https://maps.google.com/?q=Grote+Markt+Antwerp" target="_blank" rel="noopener">📍</a></h3><p>Guild houses, the Brabo fountain, gilded facades. First Belgian beer on a terrace.</p></div></div>
+    <div class="time-block"><div class="time-label">19:00</div><div class="time-content"><h3>🍽️ Dinner at De Arme Duivel <a class="pin" href="https://maps.google.com/?q=De+Arme+Duivel+Armeduivelstraat+1+Antwerp" target="_blank" rel="noopener">📍</a></h3><p>The cozy classic you flagged. It is a Sunday, so <strong>confirm they are open when you book</strong>; if not, the Grote Markt terraces are 5 minutes away.</p></div></div>
+    <div class="hotel-card">
+      <div class="hotel-head"><span class="h-icon">🏨</span><span class="h-name">a&amp;o Antwerpen Centraal · Sep 13–16 <a class="pin" href="https://maps.google.com/?q=a%26o+Antwerpen+Centraal+Pelikaanstraat+20" target="_blank" rel="noopener">📍</a></span><span class="h-badge">✅ Booked</span></div>
+      <div class="h-row"><div class="h-key">Address</div><div class="h-val">Pelikaanstraat 20, 2018 Antwerp · beside Antwerpen-Centraal</div></div>
+      <div class="h-row"><div class="h-key">Guests</div><div class="h-val">3 nights · <strong>4 travelers</strong></div></div>
+      <div class="h-row"><div class="h-key">Check-in</div><div class="h-val">From 15:00 · checkout by <strong>10:00</strong>, they are strict</div></div>
+      <div class="h-row"><div class="h-key">Booked via</div><div class="h-val">Agoda</div></div>
+      <div class="h-row"><div class="h-key">At property</div><div class="h-val">City tax <strong>EUR 42.96 per person</strong>, card or cash at reception</div></div>
+    </div>
+    <div class="food-block"><div class="food-label">🍽️ Breakfast · Lunch · Dinner</div>
+      <div class="food-row"><div class="food-time">Breakfast</div><div class="food-info">Quick pastry in Amsterdam before the train.</div></div>
+      <div class="food-row"><div class="food-time">Lunch</div><div class="food-info"><strong>Frites Atelier</strong><a class="pin" href="https://maps.google.com/?q=Frites+Atelier+Antwerp" target="_blank" rel="noopener">📍</a> near the Meir, chef-made Belgian fries. When in Belgium, day one, fries.</div></div>
+      <div class="food-row"><div class="food-time">Dinner</div><div class="food-info"><strong>De Arme Duivel</strong>, Belgian classics in a snug old house.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="day be" id="day5">
+  <div class="day-head"><div class="day-num">5</div><div class="day-info"><div class="day-date">Monday · September 14</div><div class="day-title">Day Trip · Brugge, the Fairytale One</div></div><div class="day-tag">Belgium</div></div>
+  <div class="day-body">
+    <div class="step"><div class="step-num">1</div><div class="step-body"><div class="step-name">🚆 Train to Brugge · 09:00 <a class="dir" href="https://www.google.com/maps/dir/?api=1&origin=Antwerpen-Centraal&destination=Brugge+railway+station&travelmode=transit" target="_blank" rel="noopener">🧭 Route</a></div><div class="step-walk">~1h 25m direct, hourly · buy at the station or SNCB app, no reservation</div><div class="step-note">Standard round trip ~EUR 33 pp, buy in the <strong>SNCB app or a machine BEFORE boarding</strong>: since July 2026 Belgian trains no longer sell tickets on board and fines run to EUR 500. Trains are never full on a Monday.</div></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-body"><div class="step-name">🏛️ The Markt · 10:45 <a class="pin" href="https://maps.google.com/?q=Markt+Brugge" target="_blank" rel="noopener">📍</a></div><div class="step-note">The postcard square with step-gabled guild houses. Climb the <strong>Belfry</strong><a class="pin" href="https://maps.google.com/?q=Belfort+Brugge" target="_blank" rel="noopener">📍</a> if the queue is kind: 366 steps, ringing bells, rooftops and canals below.</div></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-body"><div class="step-name">⛴️ Canal boat tour · after lunch <a class="pin" href="https://maps.google.com/?q=Huidenvettersplein+boat+tour+Brugge" target="_blank" rel="noopener">📍</a></div><div class="step-walk">30 minutes · five jetties near the Fish Market · the anchor of the day</div><div class="step-note">Swans, stone bridges, secret gardens from the water.</div></div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-body"><div class="step-name">📸 Rozenhoedkaai<a class="pin" href="https://maps.google.com/?q=Rozenhoedkaai+Brugge" target="_blank" rel="noopener">📍</a> → Begijnhof<a class="pin" href="https://maps.google.com/?q=Begijnhof+Brugge" target="_blank" rel="noopener">📍</a> → Minnewater<a class="pin" href="https://maps.google.com/?q=Minnewaterpark+Brugge" target="_blank" rel="noopener">📍</a></div><div class="step-note">The most photographed corner in Belgium, then the quiet beguinage and the swan-filled "Lake of Love".</div></div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-body"><div class="step-name">🍫 Chocolate crawl · 16:00</div><div class="step-note"><strong>Dumon</strong><a class="pin" href="https://maps.google.com/?q=Chocolatier+Dumon+Brugge" target="_blank" rel="noopener">📍</a> and <strong>The Chocolate Line</strong><a class="pin" href="https://maps.google.com/?q=The+Chocolate+Line+Brugge" target="_blank" rel="noopener">📍</a> are the two worth your euros. Buy the box, zero regrets. Trains back run late, dinner in Brugge or Antwerp, your call.</div></div></div>
+    <div class="food-block"><div class="food-label">🍽️ Breakfast · Lunch · Dinner</div>
+      <div class="food-row"><div class="food-time">Breakfast</div><div class="food-info">Coffee at Antwerpen-Centraal before boarding.</div></div>
+      <div class="food-row"><div class="food-time">Lunch</div><div class="food-info">Moules-frites on a Markt terrace, or the brewery lunch at <strong>De Halve Maan</strong><a class="pin" href="https://maps.google.com/?q=Brouwerij+De+Halve+Maan+Brugge" target="_blank" rel="noopener">📍</a>. Then the snack everyone queues for: a warm waffle at <strong>Chez Albert</strong><a class="pin" href="https://maps.google.com/?q=Chez+Albert+Brugge" target="_blank" rel="noopener">📍</a>, the viral Brugge waffle window.</div></div>
+      <div class="food-row"><div class="food-time">Dinner</div><div class="food-info"><strong>De Halve Maan</strong><a class="pin" href="https://maps.google.com/?q=Brouwerij+De+Halve+Maan+Brugge" target="_blank" rel="noopener">📍</a> brewery (a Brugse Zot where it is born), or back near the hotel.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="day be" id="day6">
+  <div class="day-head"><div class="day-num">6</div><div class="day-info"><div class="day-date">Tuesday · September 15</div><div class="day-title">Day Trip · Gent, the Cool Sister</div></div><div class="day-tag">Belgium</div></div>
+  <div class="day-body">
+    <div class="step"><div class="step-num">1</div><div class="step-body"><div class="step-name">🚆 Train to Gent-Sint-Pieters · 09:30 <a class="dir" href="https://www.google.com/maps/dir/?api=1&origin=Antwerpen-Centraal&destination=Gent-Sint-Pieters&travelmode=transit" target="_blank" rel="noopener">🧭 Route</a></div><div class="step-walk">~50 min, several per hour · then tram 1 to Korenmarkt<a class="pin" href="https://maps.google.com/?q=Korenmarkt+Gent" target="_blank" rel="noopener">📍</a> 10 min</div></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-body"><div class="step-name">🖼️ St Bavo's Cathedral · 11:00 <a class="pin" href="https://maps.google.com/?q=Sint-Baafskathedraal+Gent" target="_blank" rel="noopener">📍</a></div><div class="step-note">The <strong>Ghent Altarpiece</strong>, the Van Eycks' Adoration of the Mystic Lamb. Book the visitor slot online, the AR tour included is genuinely excellent.</div></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-body"><div class="step-name">🌊 Lunch on the Graslei · 12:30 <a class="pin" href="https://maps.google.com/?q=Graslei+Gent" target="_blank" rel="noopener">📍</a></div><div class="step-note">The medieval waterfront. Sit on the quay steps like the locals if the sun is out.</div></div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-body"><div class="step-name">🏰 Gravensteen Castle · 14:00 <a class="pin" href="https://maps.google.com/?q=Gravensteen+Gent" target="_blank" rel="noopener">📍</a></div><div class="step-note">A proper moated 12th-century fortress mid-city. The audio guide is famously funny. About 1.5 hours.</div></div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-body"><div class="step-name">🍬 Cuberdon + St Michael's Bridge · 16:00</div><div class="step-note">The purple cone candy from a street cart, the three-tower view from the bridge<a class="pin" href="https://maps.google.com/?q=Sint-Michielsbrug+Gent" target="_blank" rel="noopener">📍</a>, then home. <strong>Pack tonight</strong>: Germany tomorrow, checkout 10:00.</div></div></div>
+    <div class="food-block"><div class="food-label">🍽️ Breakfast · Lunch · Dinner</div>
+      <div class="food-row"><div class="food-time">Breakfast</div><div class="food-info">Station coffee + a koffiekoek.</div></div>
+      <div class="food-row"><div class="food-time">Lunch</div><div class="food-info">Graslei terraces, or <strong>Balls &amp; Glory</strong><a class="pin" href="https://maps.google.com/?q=Balls+and+Glory+Gent" target="_blank" rel="noopener">📍</a> stuffed meatballs, a Gent original.</div></div>
+      <div class="food-row"><div class="food-time">Dinner</div><div class="food-info">Easy night in Antwerp: <strong>Elfde Gebod</strong><a class="pin" href="https://maps.google.com/?q=Elfde+Gebod+Antwerp" target="_blank" rel="noopener">📍</a> beside the cathedral: Antwerp's oldest and most-filmed restaurant, walls of religious statues, famous beef stew and beer brûlée. Book for dinner.</div></div>
+    </div>
+    <div class="btns">
+      <a class="btn outline" href="https://www.sintbaafskathedraal.be/en/" target="_blank" rel="noopener">🎟️ Altarpiece</a>
+    </div>
+  </div>
+</div>
+
+<h2 class="section-title">Germany · <em>Cologne, Düsseldorf &amp; Bonn</em></h2>
+<p class="section-sub">Sep 16 – 19 · 3 nights · Courtyard by Marriott Cologne · 2 rooms</p>
+
+<div class="day de" id="day7">
+  <div class="day-head"><div class="day-num">7</div><div class="day-info"><div class="day-date">Wednesday · September 16</div><div class="day-title">Train to Cologne · The Dom · Love Locks</div></div><div class="day-tag">Germany</div></div>
+  <div class="day-body">
+    <div class="time-block"><div class="time-label">09:00</div><div class="time-content"><h3>Checkout by 10:00 sharp</h3><p>a&amp;o is strict about it. Coffee at the station.</p></div></div>
+    <div class="time-block"><div class="time-label">10:00</div><div class="time-content"><h3>🚆 Antwerp → Cologne, ~3h <a class="dir" href="https://www.google.com/maps/dir/?api=1&origin=Antwerpen-Centraal&destination=K%C3%B6ln+Hauptbahnhof&travelmode=transit" target="_blank" rel="noopener">🧭 Route</a></h3><p>One easy change in <strong>Brussels</strong> onto the German <strong>ICE</strong>. Book this leg as one through-ticket on int.bahn.de at the Sparpreis saver fare, seat reservation included.</p></div></div>
+    <div class="time-block"><div class="time-label">13:30</div><div class="time-content"><h3>⛪ The best station exit in Europe</h3><p>Walk out of Köln Hbf and the <strong>Dom</strong><a class="pin" href="https://maps.google.com/?q=Cologne+Cathedral" target="_blank" rel="noopener">📍</a> fills the entire sky. Drop bags at the hotel, check in to your two rooms.</p></div></div>
+    <div class="time-block"><div class="time-label">15:30</div><div class="time-content"><h3>Cologne Cathedral, inside</h3><p>Free entry, open all afternoon. Find the golden Shrine of the Three Kings. Feeling energetic? The 533-step tower climb (~EUR 6) buys the whole Rhine valley.</p></div></div>
+    <div class="time-block"><div class="time-label">17:00</div><div class="time-content"><h3>🔒 Hohenzollern Bridge at sunset <a class="pin" href="https://maps.google.com/?q=Hohenzollern+Bridge+Cologne" target="_blank" rel="noopener">📍</a></h3><p>Thousands of love locks with the Dom behind you. Bring a small lock: a 10th-anniversary-year lock over the Rhine feels right.</p></div></div>
+    <div class="time-block"><div class="time-label">19:00</div><div class="time-content"><h3>🍺 First brauhaus night</h3><p>Waiters keep bringing small Kölsch glasses until you put your coaster on top of the glass. When in Cologne.</p></div></div>
+    <div class="hotel-card">
+      <div class="hotel-head"><span class="h-icon">🏨</span><span class="h-name">Courtyard by Marriott Cologne · Sep 16–19 <a class="pin" href="https://maps.google.com/?q=Courtyard+by+Marriott+Cologne" target="_blank" rel="noopener">📍</a></span><span class="h-badge">✅ Booked</span></div>
+      <div class="h-row"><div class="h-key">Rooms</div><div class="h-val">2 rooms · 3 nights · <strong>4 travelers</strong></div></div>
+      <div class="h-row"><div class="h-key">Booking ID</div><div class="h-val"><strong>6065490163</strong> · Agoda</div></div>
+    </div>
+    <div class="food-block"><div class="food-label">🍽️ Breakfast · Lunch · Dinner</div>
+      <div class="food-row"><div class="food-time">Breakfast</div><div class="food-info">Belgian pastry at Antwerpen-Centraal.</div></div>
+      <div class="food-row"><div class="food-time">Lunch</div><div class="food-info">On the train, or a bratwurst by the Dom on arrival.</div></div>
+      <div class="food-row"><div class="food-time">Dinner</div><div class="food-info"><strong>Früh am Dom</strong><a class="pin" href="https://maps.google.com/?q=Fr%C3%BCh+am+Dom+Cologne" target="_blank" rel="noopener">📍</a> the classic brauhaus 2 minutes from the cathedral: schnitzel, pork knuckle, Kölsch.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="day de" id="day8">
+  <div class="day-head"><div class="day-num">8</div><div class="day-info"><div class="day-date">Thursday · September 17</div><div class="day-title">Day Trip · Düsseldorf</div></div><div class="day-tag">Germany</div></div>
+  <div class="day-body">
+    <div class="step"><div class="step-num">1</div><div class="step-body"><div class="step-name">🚆 Köln → Düsseldorf · 10:00 <a class="dir" href="https://www.google.com/maps/dir/?api=1&origin=K%C3%B6ln+Hauptbahnhof&destination=D%C3%BCsseldorf+Hauptbahnhof&travelmode=transit" target="_blank" rel="noopener">🧭 Route</a></div><div class="step-walk">25–30 min, several trains per hour, no booking needed · sleep in first</div></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-body"><div class="step-name">🍻 Altstadt, "the longest bar in the world" <a class="pin" href="https://maps.google.com/?q=Altstadt+D%C3%BCsseldorf" target="_blank" rel="noopener">📍</a></div><div class="step-note">300 pubs in half a square kilometer, charming even before noon. Lunch here.</div></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-body"><div class="step-name">🚶 Rhine Promenade · after lunch <a class="pin" href="https://maps.google.com/?q=Rheinuferpromenade+D%C3%BCsseldorf" target="_blank" rel="noopener">📍</a></div><div class="step-note">Palm-lined, lively, locals everywhere. Walk it south toward the harbor.</div></div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-body"><div class="step-name">📸 MedienHafen · 14:30 <a class="pin" href="https://maps.google.com/?q=MedienHafen+D%C3%BCsseldorf" target="_blank" rel="noopener">📍</a></div><div class="step-note">The warped silver Frank Gehry buildings. Great photos, 25 min walk or a short tram.</div></div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-body"><div class="step-name">🍺 One Altbier at Uerige · 16:00 <a class="pin" href="https://maps.google.com/?q=Uerige+D%C3%BCsseldorf" target="_blank" rel="noopener">📍</a></div><div class="step-note">Düsseldorf's dark answer to Kölsch. Friendly rivalry is mandatory. Then train home. Optional on return: <strong>Lindt Chocolate Museum</strong><a class="pin" href="https://maps.google.com/?q=Schokoladenmuseum+Cologne" target="_blank" rel="noopener">📍</a> on the river, last entry 17:00, only if you are back early.</div></div></div>
+    <div class="food-block"><div class="food-label">🍽️ Breakfast · Lunch · Dinner</div>
+      <div class="food-row"><div class="food-time">Breakfast</div><div class="food-info">Hotel, or a bakery by Köln Hbf.</div></div>
+      <div class="food-row"><div class="food-time">Lunch</div><div class="food-info"><strong>Brauerei Schumacher</strong><a class="pin" href="https://maps.google.com/?q=Brauerei+Schumacher+D%C3%BCsseldorf" target="_blank" rel="noopener">📍</a> or <strong>Zum Schlüssel</strong><a class="pin" href="https://maps.google.com/?q=Zum+Schl%C3%BCssel+D%C3%BCsseldorf" target="_blank" rel="noopener">📍</a> in the Altstadt, hearty Rhineland plates.</div></div>
+      <div class="food-row"><div class="food-time">Dinner</div><div class="food-info"><strong>Peters Brauhaus</strong><a class="pin" href="https://maps.google.com/?q=Peters+Brauhaus+Cologne" target="_blank" rel="noopener">📍</a> back in Cologne, or lighter pasta on the Heumarkt terraces.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="day de" id="day9">
+  <div class="day-head"><div class="day-num">9</div><div class="day-info"><div class="day-date">Friday · September 18</div><div class="day-title">Day Trip · Bonn, Beethoven's Hometown</div></div><div class="day-tag">Germany</div></div>
+  <div class="day-body">
+    <div class="step"><div class="step-num">1</div><div class="step-body"><div class="step-name">🚆 Köln → Bonn · 10:00 <a class="dir" href="https://www.google.com/maps/dir/?api=1&origin=K%C3%B6ln+Hauptbahnhof&destination=Bonn+Hauptbahnhof&travelmode=transit" target="_blank" rel="noopener">🧭 Route</a></div><div class="step-walk">~25 min, several per hour · the gentlest day of the German leg</div></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-body"><div class="step-name">🎹 Beethoven-Haus · 11:00 <a class="pin" href="https://maps.google.com/?q=Beethoven-Haus+Bonngasse+20+Bonn" target="_blank" rel="noopener">📍</a></div><div class="step-note">His birthplace: instruments, manuscripts, the ear trumpets. Intimate and moving, ~1.5 hours.</div></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-body"><div class="step-name">🏛️ Lunch on the Marktplatz · 13:00 <a class="pin" href="https://maps.google.com/?q=Marktplatz+Bonn" target="_blank" rel="noopener">📍</a></div><div class="step-note">By the pink Rococo town hall.</div></div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-body"><div class="step-name">⛪ Bonn Minster<a class="pin" href="https://maps.google.com/?q=Bonn+Minster" target="_blank" rel="noopener">📍</a> + the giant Beethoven head<a class="pin" href="https://maps.google.com/?q=Beethoven+Monument+M%C3%BCnsterplatz+Bonn" target="_blank" rel="noopener">📍</a> · 14:30</div><div class="step-note">900-year-old basilica, then the sculpture nearby. Gelato stroll on the Rhine bank after.</div></div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-body"><div class="step-name">🥂 Farewell-to-Germany dinner · 19:00</div><div class="step-note">Back in Cologne. <strong>Pack tonight</strong>: tomorrow is the big travel day into Switzerland.</div></div></div>
+    <div class="food-block"><div class="food-label">🍽️ Breakfast · Lunch · Dinner</div>
+      <div class="food-row"><div class="food-time">Breakfast</div><div class="food-info">Hotel, or Café Extrablatt by the Dom.</div></div>
+      <div class="food-row"><div class="food-time">Lunch</div><div class="food-info"><strong>Em Höttche</strong><a class="pin" href="https://maps.google.com/?q=Em+H%C3%B6ttche+Bonn" target="_blank" rel="noopener">📍</a> on Bonn's Marktplatz, 600 years old and cozy.</div></div>
+      <div class="food-row"><div class="food-time">Dinner</div><div class="food-info"><strong>Peters Brauhaus</strong> if you saved it, or <strong>Gaffel am Dom</strong><a class="pin" href="https://maps.google.com/?q=Gaffel+am+Dom+Cologne" target="_blank" rel="noopener">📍</a>. Pure Cologne either way.</div></div>
+    </div>
+  </div>
+</div>
+
+<h2 class="section-title">Switzerland · <em>Interlaken &amp; the Jungfrau</em></h2>
+<p class="section-sub">Sep 19 – 22 · 3 nights · Hapimag Resort Interlaken, apartment by the Höhematte</p>
+
+<div class="day ch" id="day10">
+  <div class="day-head"><div class="day-num">10</div><div class="day-info"><div class="day-date">Saturday · September 19</div><div class="day-title">Into the Alps · Cologne → Interlaken</div></div><div class="day-tag">Switzerland</div></div>
+  <div class="day-body">
+    <div class="time-block"><div class="time-label">09:00</div><div class="time-content"><h3>🚆 Cologne → Basel → Interlaken Ost, ~6h <a class="dir" href="https://www.google.com/maps/dir/?api=1&origin=K%C3%B6ln+Hauptbahnhof&destination=Interlaken+Ost&travelmode=transit" target="_blank" rel="noopener">🧭 Route</a></h3><p>Direct <strong>ICE to Basel SBB</strong> (~4h, book the Sparpreis saver fare well ahead), easy change, then direct to <strong>Interlaken Ost</strong> (~2h). Sit on the <strong>left</strong> leaving Cologne: the Rhine castles between Bonn and Mainz are the prettiest rail hour in Germany.</p></div></div>
+    <div class="time-block"><div class="time-label">15:30</div><div class="time-content"><h3>🏨 Arrive, check in, exhale</h3><p>From Interlaken Ost it is a flat 10 minute walk along the Höheweg to <strong>Hapimag</strong><a class="pin" href="https://maps.google.com/?q=Hapimag+Resort+Interlaken+H%C3%B6heweg+95" target="_blank" rel="noopener">📍</a> <a class="dir" href="https://www.google.com/maps/dir/?api=1&origin=Interlaken+Ost&destination=Hapimag+Resort+Interlaken&travelmode=walking" target="_blank" rel="noopener">🧭 Walk</a>, with a bus stop right in front of the resort. Check-in opens 16:00, they will hold bags if you are early. Ask reception for your <strong>guest card</strong> (free local buses) and <strong>reserve tomorrow's early breakfast</strong> while you are at the desk. Grocery run at the Coop<a class="pin" href="https://maps.google.com/?q=Coop+Interlaken+Ost" target="_blank" rel="noopener">📍</a> by the station for the apartment kitchen.</p></div></div>
+    <div class="time-block"><div class="time-label">17:00</div><div class="time-content"><h3>🪂 First stroll: Höhematte <a class="pin" href="https://maps.google.com/?q=H%C3%B6hematte+Interlaken" target="_blank" rel="noopener">📍</a> + Hohweg</h3><p>The great meadow with paragliders landing and the Jungfrau straight ahead. This view is why you came.</p></div></div>
+    <div class="time-block"><div class="time-label">18:30</div><div class="time-content"><h3>📷 Check tomorrow's summit weather tonight</h3><p>Jungfrau live webcams. Clear morning = go early. Socked in = swap with the Lauterbrunnen day, tickets can be moved.</p></div></div>
+    <div class="time-block"><div class="time-label">19:00</div><div class="time-content"><h3>🫕 Welcome-to-Switzerland fondue</h3></div></div>
+    <div class="alert alert-gold"><h4>💡 Buy Swiss Half Fare Cards before your first Swiss train</h4><p><strong>CHF 150 each (2026 price), valid 1 month</strong>, sold online at sbb.ch. It halves nearly every train, bus, boat and mountain railway for the next 10 days: 50% off the full Jungfraujoch round trip, the Matterhorn gondola and Pilatus. Audited against the Swiss Travel Pass: the Half Fare Card wins by roughly CHF 250 per person on this itinerary.</p></div>
+    <div class="hotel-card">
+      <div class="hotel-head"><span class="h-icon">🏨</span><span class="h-name">Hapimag Resort Interlaken · Sep 19–22 <a class="pin" href="https://maps.google.com/?q=Hapimag+Resort+Interlaken+H%C3%B6heweg+95" target="_blank" rel="noopener">📍</a></span><span class="h-badge">✅ Booked</span></div>
+      <div class="h-row"><div class="h-key">Address</div><div class="h-val">Höheweg 95, Interlaken City Center, 3800 · right by the Höhematte, ~10 min walk from Ost or West</div></div>
+      <div class="h-row"><div class="h-key">Room</div><div class="h-val"><strong>Premium One-Bedroom Apartment</strong> · 3 adults · 2 twin beds + double sofa bed · full kitchen &amp; balcony</div></div>
+      <div class="h-row"><div class="h-key">Included</div><div class="h-val">Breakfast + free WiFi · <strong>reserve breakfast at the restaurant the evening before</strong>, they do not take walk-ins</div></div>
+      <div class="h-row"><div class="h-key">Booking Ref</div><div class="h-val"><strong>26070811133677957</strong> · Guest Ref <strong>1745353677</strong> · pay later on Visa ····5193 (~USD 1,958.40)</div></div>
+      <div class="h-row"><div class="h-key">Cancellation</div><div class="h-val">Free until <strong>September 1, 2026</strong> · 71% charge within 18 days of arrival</div></div>
+      <div class="h-row"><div class="h-key">Good to know</div><div class="h-val">Check-in from 16:00, checkout 10:00 · weekly housekeeping, swap towels at reception anytime · city tax settled at the property</div></div>
+    </div>
+    <div class="food-block"><div class="food-label">🍽️ Breakfast · Lunch · Dinner</div>
+      <div class="food-row"><div class="food-time">Breakfast</div><div class="food-info">Bakery by Köln Hbf, plus train snacks for the long ride.</div></div>
+      <div class="food-row"><div class="food-time">Lunch</div><div class="food-info">On board, or a bretzel at Basel SBB between trains.</div></div>
+      <div class="food-row"><div class="food-time">Dinner</div><div class="food-info"><strong>Restaurant Bären</strong><a class="pin" href="https://maps.google.com/?q=Restaurant+B%C3%A4ren+Unterseen" target="_blank" rel="noopener">📍</a> in Unterseen, classic cheese fondue in a 400-year-old timber house.</div></div>
+    </div>
+    <div class="btns">
+      <a class="btn outline" href="https://www.sbb.ch/en/tickets-offers/tickets/half-fare-travelcard.html" target="_blank" rel="noopener">🎟️ Half Fare Card</a>
+      <a class="btn outline" href="https://www.jungfrau.ch/en-gb/live/webcams/" target="_blank" rel="noopener">📷 Webcams</a>
+    </div>
+  </div>
+</div>
+
+<div class="day ch" id="day11">
+  <div class="day-head"><div class="day-num">11</div><div class="day-info"><div class="day-date">Sunday · September 20</div><div class="day-title">Jungfraujoch · Top of Europe · 3,454m</div></div><div class="day-tag">Switzerland</div></div>
+  <div class="day-body">
+    <div class="alert alert-red"><h4>⚠️ Pre-book, 2–4 weeks ahead</h4><p>Round trip on <strong>jungfrau.ch</strong>, Half Fare discount applies. This is the one early morning of the trip, like the Ohori Park run rule: everything else stays sleep-in.</p></div>
+    <div class="step"><div class="step-num">1</div><div class="step-body"><div class="step-name">⏰ Early breakfast, warm layers · 07:30</div><div class="step-note">Around 0°C up top even in September. Sunglasses too, glacier light is fierce.</div></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-body"><div class="step-name">🚡 Interlaken Ost → Grindelwald Terminal<a class="pin" href="https://maps.google.com/?q=Grindelwald+Terminal" target="_blank" rel="noopener">📍</a> → Eiger Express · 08:15 <a class="dir" href="https://www.google.com/maps/dir/?api=1&origin=Interlaken+Ost&destination=Jungfraujoch&travelmode=transit" target="_blank" rel="noopener">🧭 Route</a></div><div class="step-note">30 min train, then 15 spectacular gondola minutes across the <strong>Eiger North Face</strong>, then the tunnel train to the top.</div></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-body"><div class="step-name">🏔️ Sphinx Observatory first · ~10:00 <a class="pin" href="https://maps.google.com/?q=Sphinx+Observatory+Jungfraujoch" target="_blank" rel="noopener">📍</a></div><div class="step-note">Beat the day crowds to the terrace: the <strong>Aletsch Glacier</strong> rolls out below like a frozen river.</div></div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-body"><div class="step-name">🧊 Ice Palace + Snow Fun plateau</div><div class="step-note">Tunnels carved inside the living glacier. Walk slowly, the altitude is real, water helps.</div></div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-body"><div class="step-name">🍫 Lunch + the highest Lindt shop on earth · 12:30</div></div></div>
+    <div class="step"><div class="step-num">6</div><div class="step-body"><div class="step-name">🚞 Descend the other way · 14:00</div><div class="step-note">Via <strong>Kleine Scheidegg and Wengen</strong> for completely new scenery. Back ~16:30, rest, easy dinner, early night.</div></div></div>
+    <div class="food-block"><div class="food-label">🍽️ Breakfast · Lunch · Dinner</div>
+      <div class="food-row"><div class="food-time">Breakfast</div><div class="food-info">Included at Hapimag: take the reserved early slot, or raid the apartment kitchen if the restaurant opens too late for the 08:15 start.</div></div>
+      <div class="food-row"><div class="food-time">Lunch</div><div class="food-info"><strong>Crystal Restaurant</strong> self-service at the Joch. Get the rösti.</div></div>
+      <div class="food-row"><div class="food-time">Dinner</div><div class="food-info"><strong>Hüsi Bierhaus</strong><a class="pin" href="https://maps.google.com/?q=H%C3%BCsi+Bierhaus+Postgasse+3+Interlaken" target="_blank" rel="noopener">📍</a> on Postgasse by the old town: Interlaken's favorite craft-beer house (#4 of 169 on Tripadvisor), Älpler macaroni and schnitzel, very relaxed.</div></div>
+    </div>
+    <div class="btns">
+      <a class="btn outline" href="https://www.jungfrau.ch/en-gb/jungfraujoch-top-of-europe/" target="_blank" rel="noopener">🎟️ Tickets</a>
+    </div>
+  </div>
+</div>
+
+<div class="day ch" id="day12">
+  <div class="day-head"><div class="day-num">12</div><div class="day-info"><div class="day-date">Monday · September 21</div><div class="day-title">Lauterbrunnen · Valley of 72 Waterfalls</div></div><div class="day-tag">Switzerland</div></div>
+  <div class="day-body">
+    <div class="step"><div class="step-num">1</div><div class="step-body"><div class="step-name">😴 Sleep in, then 20 min train · 09:30 <a class="dir" href="https://www.google.com/maps/dir/?api=1&origin=Interlaken+Ost&destination=Lauterbrunnen&travelmode=transit" target="_blank" rel="noopener">🧭 Route</a></div><div class="step-walk">Interlaken Ost → Lauterbrunnen, twice hourly</div></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-body"><div class="step-name">💧 Staubbach Falls · 10:30 <a class="pin" href="https://maps.google.com/?q=Staubbach+Falls+Lauterbrunnen" target="_blank" rel="noopener">📍</a></div><div class="step-note">The 300m ribbon of water that inspired Goethe. The little path climbs <strong>behind</strong> the falls.</div></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-body"><div class="step-name">🌊 Trümmelbach Falls · 12:00 <a class="pin" href="https://maps.google.com/?q=Tr%C3%BCmmelbach+Falls+Lauterbrunnen" target="_blank" rel="noopener">📍</a></div><div class="step-walk">PostBus deeper into the valley · ~CHF 14 · allow an hour</div><div class="step-note">Ten glacier waterfalls thundering <strong>inside</strong> the mountain, reached by tunnel lift. Bring the light jacket, it is misty in there.</div></div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-body"><div class="step-name">☕ Late lunch in the village · 14:00</div><div class="step-note">Watch BASE jumpers and paragliders drift off the kilometer-high cliffs.</div></div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-body"><div class="step-name">🎹 The Captain Ri detour: Iseltwald <a class="pin" href="https://maps.google.com/?q=Iseltwald+pier+Lake+Brienz" target="_blank" rel="noopener">📍</a> · 14:30</div><div class="step-walk">Train back to Interlaken Ost (20 min), then Bus 103 (~25 min) or the Lake Brienz boat (~45 min, the scenic way) · both half price with your card <a class="dir" href="https://www.google.com/maps/dir/?api=1&origin=Interlaken+Ost&destination=Iseltwald&travelmode=transit" target="_blank" rel="noopener">🧭 Route</a></div><div class="step-note">The lakeside pier where Captain Ri plays piano in <strong>Crash Landing on You</strong>. The village put a <strong>CHF 5 turnstile</strong> at the pier for the photo queue: pay it, take your time, golden light on Lake Brienz is the whole point. Lakeside coffee after, then bus back (faster than the boat for the return).</div></div></div>
+    <div class="step"><div class="step-num">6</div><div class="step-body"><div class="step-name">🏡 Back by 18:00 · pack tonight</div><div class="step-note">Zermatt tomorrow. (If the weather turns, swap this afternoon for the Mürren<a class="pin" href="https://maps.google.com/?q=M%C3%BCrren" target="_blank" rel="noopener">📍</a> cable car instead, the pier photo needs the light.)</div></div></div>
+    <div class="food-block"><div class="food-label">🍽️ Breakfast · Lunch · Dinner</div>
+      <div class="food-row"><div class="food-time">Breakfast</div><div class="food-info">Slow one at Hapimag, it is included: buffet with plenty of options.</div></div>
+      <div class="food-row"><div class="food-time">Lunch</div><div class="food-info"><strong>Airtime Café</strong><a class="pin" href="https://maps.google.com/?q=Airtime+Cafe+Lauterbrunnen" target="_blank" rel="noopener">📍</a> in Lauterbrunnen, great coffee and toasties.</div></div>
+      <div class="food-row"><div class="food-time">Coffee</div><div class="food-info">Lakeside terrace by the Iseltwald pier, coffee and cake with a Lake Brienz view. A few cafés cluster right at the waterfront, pick whichever terrace has the sun.</div></div>
+      <div class="food-row"><div class="food-time">Dinner</div><div class="food-info">Round two at <strong>Bären</strong><a class="pin" href="https://maps.google.com/?q=Restaurant+B%C3%A4ren+Unterseen" target="_blank" rel="noopener">📍</a> or <strong>Hüsi</strong><a class="pin" href="https://maps.google.com/?q=H%C3%BCsi+Bierhaus+Postgasse+3+Interlaken" target="_blank" rel="noopener">📍</a>, whichever won your hearts, both verified favorites.</div></div>
+    </div>
+  </div>
+</div>
+
+<h2 class="section-title">Switzerland · <em>Zermatt &amp; the Matterhorn</em></h2>
+<p class="section-sub">Sep 22 – 25 · 3 nights · Casa delle Stelle, in the car-free village</p>
+
+<div class="day ch" id="day13">
+  <div class="day-head"><div class="day-num">13</div><div class="day-info"><div class="day-date">Tuesday · September 22</div><div class="day-title">Train to Zermatt · First Matterhorn Views</div></div><div class="day-tag">Switzerland</div></div>
+  <div class="day-body">
+    <div class="time-block"><div class="time-label">09:30</div><div class="time-content"><h3>🚆 Interlaken Ost → Zermatt, ~2h 15m <a class="dir" href="https://www.google.com/maps/dir/?api=1&origin=Interlaken+Ost&destination=Zermatt&travelmode=transit" target="_blank" rel="noopener">🧭 Route</a></h3><p>Change at <strong>Spiez</strong> and <strong>Visp</strong>, easy cross-platform hops, trains run like clockwork. Zermatt is car-free: from the station it is a short walk or a little electric taxi.</p></div></div>
+    <div class="time-block"><div class="time-label">12:30</div><div class="time-content"><h3>🏨 Check in at Casa delle Stelle <a class="pin" href="https://maps.google.com/?q=Staldenstrasse+12+Zermatt" target="_blank" rel="noopener">📍</a></h3><p>Settle into your apartment, then out into the village.</p></div></div>
+    <div class="time-block"><div class="time-label">14:30</div><div class="time-content"><h3>🚶 Bahnhofstrasse stroll <a class="pin" href="https://maps.google.com/?q=Bahnhofstrasse+Zermatt" target="_blank" rel="noopener">📍</a></h3><p>Chalets, boutiques, and that first jaw-drop glimpse of the Matterhorn between rooftops.</p></div></div>
+    <div class="time-block"><div class="time-label">16:30</div><div class="time-content"><h3>📸 Kirchbrücke, THE photo spot <a class="pin" href="https://maps.google.com/?q=Kirchbr%C3%BCcke+Zermatt" target="_blank" rel="noopener">📍</a></h3><p>The church bridge in late-afternoon light, then the old lanes of blackened larch barns behind it. Check tomorrow's summit forecast at the tourist office screens tonight: clear morning = go early.</p></div></div>
+    <div class="time-block"><div class="time-label">19:00</div><div class="time-content"><h3>🫕 First Zermatt fondue</h3><p>In a proper wood-panelled stube.</p></div></div>
+    <div class="hotel-card">
+      <div class="hotel-head"><span class="h-icon">🏨</span><span class="h-name">Casa delle Stelle by Zermatt Premium Apartments · Sep 22–25 <a class="pin" href="https://maps.google.com/?q=Staldenstrasse+12+Zermatt" target="_blank" rel="noopener">📍</a></span><span class="h-badge">✅ Booked</span></div>
+      <div class="h-row"><div class="h-key">Address</div><div class="h-val">Staldenstrasse 12, Zermatt 3920</div></div>
+      <div class="h-row"><div class="h-key">Guests</div><div class="h-val">3 nights · <strong>3 travelers</strong></div></div>
+      <div class="h-row"><div class="h-key">Booking ID</div><div class="h-val"><strong>1712044122</strong> · Agoda</div></div>
+      <div class="h-row"><div class="h-key">At property</div><div class="h-val">City tax <strong>CHF 36.00</strong> settled at check-in</div></div>
+    </div>
+    <div class="food-block"><div class="food-label">🍽️ Breakfast · Lunch · Dinner</div>
+      <div class="food-row"><div class="food-time">Breakfast</div><div class="food-info">Light hotel morning, travel day.</div></div>
+      <div class="food-row"><div class="food-time">Lunch</div><div class="food-info"><strong>Fuchs bakery</strong><a class="pin" href="https://maps.google.com/?q=B%C3%A4ckerei+Fuchs+Zermatt" target="_blank" rel="noopener">📍</a> on Bahnhofstrasse on arrival, or picked up at the Visp change.</div></div>
+      <div class="food-row"><div class="food-time">Dinner</div><div class="food-info"><strong>Whymper-Stube</strong><a class="pin" href="https://maps.google.com/?q=Whymper-Stube+Zermatt" target="_blank" rel="noopener">📍</a> legendary fondue and raclette in the Monte Rosa cellar. Book a table.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="day ch" id="day14">
+  <div class="day-head"><div class="day-num">14</div><div class="day-info"><div class="day-date">Wednesday · September 23</div><div class="day-title">Matterhorn Glacier Paradise · 3,883m</div></div><div class="day-tag">Switzerland</div></div>
+  <div class="day-body">
+    <div class="step"><div class="step-num">1</div><div class="step-body"><div class="step-name">🚡 Matterhorn Express, morning ride up · 09:15 <a class="pin" href="https://maps.google.com/?q=Matterhorn+Express+Talstation+Zermatt" target="_blank" rel="noopener">📍</a></div><div class="step-walk">Valley station 15 min walk, south end of the village · ~40 min via Furi and Trockener Steg</div><div class="step-note">The last stretch is the crystal-cabin Glacier Ride. Mornings have the clearest skies. Buy tickets online the day before, Half Fare applies: ~CHF 60 each instead of ~120.</div></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-body"><div class="step-name">🏔️ The viewing platform · 10:15 <a class="pin" href="https://maps.google.com/?q=Matterhorn+Glacier+Paradise" target="_blank" rel="noopener">📍</a></div><div class="step-note">Highest cable car station in Europe: 38 four-thousanders, Italy one side, Switzerland the other, the Matterhorn close enough to touch.</div></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-body"><div class="step-name">🧊 Glacier Palace · 11:00</div><div class="step-note">Ice tunnels and sculptures 15 meters inside the glacier, then the cinema lounge to thaw.</div></div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-body"><div class="step-name">☀️ Sun-terrace lunch at Furi<a class="pin" href="https://maps.google.com/?q=Restaurant+Furi+Zermatt" target="_blank" rel="noopener">📍</a> on the way down · ~13:00</div></div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-body"><div class="step-name">🏛️ Rest, café, Matterhorn Museum<a class="pin" href="https://maps.google.com/?q=Matterhorn+Museum+Zermatt" target="_blank" rel="noopener">📍</a> · 15:00</div><div class="step-note">The story of the 1865 first ascent, quietly gripping. Cozy dinner tonight, you earned it.</div></div></div>
+    <div class="food-block"><div class="food-label">🍽️ Breakfast · Lunch · Dinner</div>
+      <div class="food-row"><div class="food-time">Breakfast</div><div class="food-info">Apartment breakfast or Fuchs bakery.</div></div>
+      <div class="food-row"><div class="food-time">Lunch</div><div class="food-info"><strong>Restaurant Furi</strong>'s sun terrace on the descent, or Trockener Steg self-service with THE view.</div></div>
+      <div class="food-row"><div class="food-time">Dinner</div><div class="food-info"><strong>Schäferstube</strong><a class="pin" href="https://maps.google.com/?q=Restaurant+Sch%C3%A4ferstube+Zermatt" target="_blank" rel="noopener">📍</a> for lamb specialities, run by the same Julen family for generations, cozy and warm after a glacier day.</div></div>
+    </div>
+    <div class="btns">
+      <a class="btn outline" href="https://www.matterhornparadise.ch/en" target="_blank" rel="noopener">🎟️ Tickets</a>
+    </div>
+  </div>
+</div>
+
+<div class="day ch" id="day15">
+  <div class="day-head"><div class="day-num">15</div><div class="day-info"><div class="day-date">Thursday · September 24</div><div class="day-title">Zermatt Rest Day · Sunnegga &amp; Boutiques</div></div><div class="day-tag">Switzerland</div></div>
+  <div class="day-body">
+    <div class="step"><div class="step-num">1</div><div class="step-body"><div class="step-name">😴 Real sleep-in · 10:00</div><div class="step-note">Late breakfast, zero guilt. The built-in slow day.</div></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-body"><div class="step-name">🚞 Sunnegga funicular · 11:00 <a class="pin" href="https://maps.google.com/?q=Sunnegga+funicular+Zermatt" target="_blank" rel="noopener">📍</a></div><div class="step-walk">3 minutes inside the mountain, out into sunshine at 2,288m</div><div class="step-note">The easy 10 minute path drops to <strong>Leisee</strong><a class="pin" href="https://maps.google.com/?q=Leisee+Zermatt" target="_blank" rel="noopener">📍</a> the little lake with the Matterhorn reflection. Bring the good camera.</div></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-body"><div class="step-name">☀️ Lunch at Chez Vrony, Findeln <a class="pin" href="https://maps.google.com/?q=Chez+Vrony+Findeln+Zermatt" target="_blank" rel="noopener">📍</a> · 12:30</div><div class="step-note">THE Zermatt restaurant, all over Instagram and TikTok for a reason: a 100-year-old family farmhouse at 2,100m, Matterhorn filling the terrace view, homemade dried meat and the famous Vrony burger. It is a 10 minute downhill walk from Sunnegga, exactly where you already are. <strong>Reserve ahead online (they accept bookings 3 months out) or call from 08:30 that morning.</strong> Season runs to Oct 11, you are well inside it.</div></div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-body"><div class="step-name">🛍️ Boutique afternoon on Bahnhofstrasse · 15:00 <a class="pin" href="https://maps.google.com/?q=Bahnhofstrasse+Zermatt" target="_blank" rel="noopener">📍</a></div><div class="step-note">Watches to window-shop, <strong>Läderach</strong><a class="pin" href="https://maps.google.com/?q=L%C3%A4derach+Zermatt" target="_blank" rel="noopener">📍</a> chocolate to actually buy.</div></div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-body"><div class="step-name">📸 One last Kirchbrücke, then farewell fondue · 17:30</div><div class="step-note">Evening light on the mountain, say goodbye properly. <strong>Pack tonight</strong>, Lucerne tomorrow.</div></div></div>
+    <div class="food-block"><div class="food-label">🍽️ Breakfast · Lunch · Dinner</div>
+      <div class="food-row"><div class="food-time">Breakfast</div><div class="food-info">Late and lazy: <strong>Fuchs bakery</strong> or the apartment.</div></div>
+      <div class="food-row"><div class="food-time">Lunch</div><div class="food-info"><strong>Chez Vrony</strong><a class="pin" href="https://maps.google.com/?q=Chez+Vrony+Findeln+Zermatt" target="_blank" rel="noopener">📍</a> in Findeln, the Vrony burger with the Matterhorn view. Reserve!</div></div>
+      <div class="food-row"><div class="food-time">Dinner</div><div class="food-info"><strong>Du Pont</strong><a class="pin" href="https://maps.google.com/?q=Restaurant+Du+Pont+Zermatt" target="_blank" rel="noopener">📍</a> the oldest restaurant in the village, or a return to your favorite.</div></div>
+    </div>
+  </div>
+</div>
+
+<h2 class="section-title">Switzerland · <em>Lucerne &amp; Zurich</em></h2>
+<p class="section-sub">Sep 25 – 29 · 2 nights Lucerne, 2 nights Zurich · then home</p>
+
+<div class="day ch" id="day16">
+  <div class="day-head"><div class="day-num">16</div><div class="day-info"><div class="day-date">Friday · September 25</div><div class="day-title">Train to Lucerne · Chapel Bridge · Lion</div></div><div class="day-tag">Switzerland</div></div>
+  <div class="day-body">
+    <div class="time-block"><div class="time-label">09:30</div><div class="time-content"><h3>🚆 Zermatt → Lucerne, ~3h 15m <a class="dir" href="https://www.google.com/maps/dir/?api=1&origin=Zermatt&destination=Luzern&travelmode=transit" target="_blank" rel="noopener">🧭 Route</a></h3><p>Change at <strong>Visp</strong> and <strong>Bern</strong>. Breakfast pastry from the bakery for the platform.</p></div></div>
+    <div class="time-block"><div class="time-label">13:00</div><div class="time-content"><h3>🏨 Arrive, 7 minute walk to the hotel <a class="dir" href="https://www.google.com/maps/dir/?api=1&origin=Luzern+Bahnhof&destination=TOP+Hotel+Rothaus+Klosterstrasse+4+Luzern&travelmode=walking" target="_blank" rel="noopener">🧭 Walk</a></h3><p>Drop bags, out into the old town.</p></div></div>
+    <div class="time-block"><div class="time-label">14:30</div><div class="time-content"><h3>🌉 Chapel Bridge, slowly, both directions <a class="pin" href="https://maps.google.com/?q=Kapellbr%C3%BCcke+Lucerne" target="_blank" rel="noopener">📍</a></h3><p>The 14th-century flower-lined wooden bridge with painted panels in the rafters, plus the Water Tower.</p></div></div>
+    <div class="time-block"><div class="time-label">15:30</div><div class="time-content"><h3>🏰 Old town squares + Musegg Wall</h3><p>Frescoed facades on Weinmarkt<a class="pin" href="https://maps.google.com/?q=Weinmarkt+Lucerne" target="_blank" rel="noopener">📍</a> and Hirschenplatz<a class="pin" href="https://maps.google.com/?q=Hirschenplatz+Lucerne" target="_blank" rel="noopener">📍</a> then up a stretch of the medieval wall towers<a class="pin" href="https://maps.google.com/?q=Museggmauer+Lucerne" target="_blank" rel="noopener">📍</a> for free rooftop views, open till dusk.</p></div></div>
+    <div class="time-block"><div class="time-label">17:00</div><div class="time-content"><h3>🦁 Lion Monument <a class="pin" href="https://maps.google.com/?q=Lion+Monument+Lucerne" target="_blank" rel="noopener">📍</a></h3><p>"The most mournful and moving piece of stone in the world," said Mark Twain. Ten quiet minutes. Then the lake promenade at golden hour, swans included.</p></div></div>
+    <div class="alert alert-gold"><h4>🎟️ Book Mt Pilatus tonight if not yet done</h4><p>The <strong>Golden Round Trip</strong> on pilatus.ch, ~CHF 120 full fare, Half Fare applies. Morning boat recommended.</p></div>
+    <div class="hotel-card">
+      <div class="hotel-head"><span class="h-icon">🏨</span><span class="h-name">TOP Hotel Rothaus · Sep 25–27 <a class="pin" href="https://maps.google.com/?q=TOP+Hotel+Rothaus+Klosterstrasse+4+Luzern" target="_blank" rel="noopener">📍</a></span><span class="h-badge">✅ Booked</span></div>
+      <div class="h-row"><div class="h-key">Address</div><div class="h-val">Klosterstrasse 4, Luzern 6003 · 7 min from the station</div></div>
+      <div class="h-row"><div class="h-key">Guests</div><div class="h-val">2 nights · <strong>3 travelers</strong></div></div>
+      <div class="h-row"><div class="h-key">Booking ID</div><div class="h-val"><strong>1712052248</strong> · Agoda · Ref <strong>85F8FA</strong></div></div>
+    </div>
+    <div class="food-block"><div class="food-label">🍽️ Breakfast · Lunch · Dinner</div>
+      <div class="food-row"><div class="food-time">Breakfast</div><div class="food-info">Zermatt bakery run before the train.</div></div>
+      <div class="food-row"><div class="food-time">Lunch</div><div class="food-info">On the train, or the food hall inside Lucerne station.</div></div>
+      <div class="food-row"><div class="food-time">Dinner</div><div class="food-info"><strong>Wirtshaus Galliker</strong><a class="pin" href="https://maps.google.com/?q=Wirtshaus+Galliker+Lucerne" target="_blank" rel="noopener">📍</a> beloved old-school Lucerne home cooking, or <strong>Rathaus Brauerei</strong><a class="pin" href="https://maps.google.com/?q=Rathaus+Brauerei+Lucerne" target="_blank" rel="noopener">📍</a> by the bridge.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="day ch" id="day17">
+  <div class="day-head"><div class="day-num">17</div><div class="day-info"><div class="day-date">Saturday · September 26</div><div class="day-title">Mt Pilatus · The Golden Round Trip</div></div><div class="day-tag">Switzerland</div></div>
+  <div class="day-body">
+    <div class="step"><div class="step-num">1</div><div class="step-body"><div class="step-name">⛴️ Lake boat Lucerne → Alpnachstad<a class="pin" href="https://maps.google.com/?q=Alpnachstad" target="_blank" rel="noopener">📍</a> · ~09:38 <a class="pin" href="https://maps.google.com/?q=Luzern+Bahnhofquai+Pier+1" target="_blank" rel="noopener">📍</a></div><div class="step-walk">1 hour of glassy water · piers in front of the station · sit on the top deck</div><div class="step-note">Boat times shift slightly by season, confirm the evening before, roughly hourly in the morning.</div></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-body"><div class="step-name">🚞 The world's steepest cogwheel railway · 11:00 <a class="pin" href="https://maps.google.com/?q=Pilatus+Bahn+Alpnachstad" target="_blank" rel="noopener">📍</a></div><div class="step-note">48% gradient, 30 minutes clinging to the cliffs. Sit facing downhill on the right for the lake views.</div></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-body"><div class="step-name">🏔️ Summit, 2,132m · 11:45 <a class="pin" href="https://maps.google.com/?q=Pilatus+Kulm" target="_blank" rel="noopener">📍</a></div><div class="step-note">Two short peak trails (Esel is 10 minutes to the very top), dragon legends in the gallery, lunch with the entire lake below you.</div></div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-body"><div class="step-name">🚡 Dragon Ride cable car down · 14:30</div><div class="step-note">To Fräkmüntegg<a class="pin" href="https://maps.google.com/?q=Fr%C3%A4km%C3%BCntegg" target="_blank" rel="noopener">📍</a> then gondolas to <strong>Kriens</strong><a class="pin" href="https://maps.google.com/?q=Pilatus+Bahnen+Kriens" target="_blank" rel="noopener">📍</a>, completely different scenery. Bus 1 back to the center, 15 minutes.</div></div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-body"><div class="step-name">🌉 Last Lucerne evening · 18:30</div><div class="step-note">One more Chapel Bridge pass at dusk, relaxed dinner, light packing.</div></div></div>
+    <div class="food-block"><div class="food-label">🍽️ Breakfast · Lunch · Dinner</div>
+      <div class="food-row"><div class="food-time">Breakfast</div><div class="food-info">Hotel, or <strong>Bachmann</strong><a class="pin" href="https://maps.google.com/?q=Confiserie+Bachmann+Lucerne" target="_blank" rel="noopener">📍</a> bakery, a Lucerne institution.</div></div>
+      <div class="food-row"><div class="food-time">Lunch</div><div class="food-info"><strong>Queen Victoria</strong><a class="pin" href="https://maps.google.com/?q=Hotel+Pilatus-Kulm+Restaurant+Queen+Victoria" target="_blank" rel="noopener">📍</a> restaurant at the Pilatus summit, window table if you can.</div></div>
+      <div class="food-row"><div class="food-time">Dinner</div><div class="food-info"><strong>Old Swiss House</strong><a class="pin" href="https://maps.google.com/?q=Old+Swiss+House+Lucerne" target="_blank" rel="noopener">📍</a> by the Lion Monument, the century-old icon where the wiener schnitzel is pan-fried at your table, or <strong>Fondue House du Pont</strong><a class="pin" href="https://maps.google.com/?q=Fondue+House+du+Pont+Lucerne" target="_blank" rel="noopener">📍</a> if you are not fondue'd out yet.</div></div>
+    </div>
+    <div class="btns">
+      <a class="btn outline" href="https://www.pilatus.ch/en/discover/golden-round-trip" target="_blank" rel="noopener">🎟️ Golden Round Trip</a>
+    </div>
+  </div>
+</div>
+
+<div class="day ch" id="day18">
+  <div class="day-head"><div class="day-num">18</div><div class="day-info"><div class="day-date">Sunday · September 27</div><div class="day-title">Train to Zurich · Old Town · Lake Sunday</div></div><div class="day-tag">Switzerland</div></div>
+  <div class="day-body">
+    <div class="alert alert-blue"><h4>ℹ️ Today is Sunday: shops are closed, churches are open</h4><p>Zurich retail sleeps on Sundays (only the main station and airport shops trade), so today is for towers, churches and the lake. All souvenir shopping happens <strong>tomorrow, Monday</strong>, when Bahnhofstrasse is fully open.</p></div>
+    <div class="time-block"><div class="time-label">09:30</div><div class="time-content"><h3>🚆 Lucerne → Zürich HB, 45–50 min <a class="dir" href="https://www.google.com/maps/dir/?api=1&origin=Luzern&destination=Z%C3%BCrich+HB&travelmode=transit" target="_blank" rel="noopener">🧭 Route</a></h3><p>Twice hourly, no booking needed. Then a 10 minute walk to the hotel, drop bags.</p></div></div>
+    <div class="time-block"><div class="time-label">13:00</div><div class="time-content"><h3>⛪ Niederdorf<a class="pin" href="https://maps.google.com/?q=Niederdorf+Zurich" target="_blank" rel="noopener">📍</a> lanes + Grossmünster <a class="pin" href="https://maps.google.com/?q=Grossm%C3%BCnster+Zurich" target="_blank" rel="noopener">📍</a></h3><p>Sunday note: both churches open to visitors <strong>after services, from about 12:30</strong>, which suits your arrival perfectly. Climb the Karlsturm tower (~CHF 5) for the classic view over river, churches and lake. Then cross to <strong>Fraumünster</strong><a class="pin" href="https://maps.google.com/?q=Fraum%C3%BCnster+Zurich" target="_blank" rel="noopener">📍</a> for the luminous Chagall windows.</p></div></div>
+    <div class="time-block"><div class="time-label">15:30</div><div class="time-content"><h3>🚶 Bahnhofstrasse, window-shopping stroll <a class="pin" href="https://maps.google.com/?q=Bahnhofstrasse+Zurich" target="_blank" rel="noopener">📍</a></h3><p>Walk the world-famous mile while it is Sunday-quiet and scout what to buy. The actual buying happens tomorrow when everything opens.</p></div></div>
+    <div class="time-block"><div class="time-label">17:30</div><div class="time-content"><h3>🦢 Lake promenade from Bürkliplatz <a class="pin" href="https://maps.google.com/?q=B%C3%BCrkliplatz+Zurich" target="_blank" rel="noopener">📍</a></h3><p>Swans in front, Alps on the horizon. Dinner in the old town after.</p></div></div>
+    <div class="hotel-card">
+      <div class="hotel-head"><span class="h-icon">🏨</span><span class="h-name">ibis Styles Zurich City Center · Sep 27–29 <a class="pin" href="https://maps.google.com/?q=ibis+Styles+Zurich+City+Center+Stampfenbachstrasse+60" target="_blank" rel="noopener">📍</a></span><span class="h-badge">✅ Booked</span></div>
+      <div class="h-row"><div class="h-key">Address</div><div class="h-val">Stampfenbachstrasse 60, Zürich 8006 · 10 min walk from Zürich HB</div></div>
+      <div class="h-row"><div class="h-key">Guests</div><div class="h-val">2 nights · <strong>3 travelers</strong></div></div>
+      <div class="h-row"><div class="h-key">Booking ID</div><div class="h-val"><strong>1712057510</strong> · Agoda · Ref <strong>2609270532</strong></div></div>
+    </div>
+    <div class="food-block"><div class="food-label">🍽️ Breakfast · Lunch · Dinner</div>
+      <div class="food-row"><div class="food-time">Breakfast</div><div class="food-info">One last Bachmann pastry in Lucerne for the train.</div></div>
+      <div class="food-row"><div class="food-time">Lunch</div><div class="food-info"><strong>Zeughauskeller</strong><a class="pin" href="https://maps.google.com/?q=Zeughauskeller+Zurich" target="_blank" rel="noopener">📍</a> by Paradeplatz, a 1487 armory turned beerhall. Get the sliced veal Zürich-style.</div></div>
+      <div class="food-row"><div class="food-time">Dinner</div><div class="food-info"><strong>Swiss Chuchi</strong><a class="pin" href="https://maps.google.com/?q=Swiss+Chuchi+Zurich" target="_blank" rel="noopener">📍</a> in Niederdorf for a fun fondue finale, or <strong>Haus Hiltl</strong><a class="pin" href="https://maps.google.com/?q=Haus+Hiltl+Zurich" target="_blank" rel="noopener">📍</a> the world's oldest vegetarian restaurant.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="day ch" id="day19">
+  <div class="day-head"><div class="day-num">19</div><div class="day-info"><div class="day-date">Monday · September 28</div><div class="day-title">Last Day · Shopping · Lindenhof · Sprüngli</div></div><div class="day-tag">Switzerland</div></div>
+  <div class="day-body">
+    <div class="step"><div class="step-num">1</div><div class="step-body"><div class="step-name">😴 Final sleep-in of the trip · 10:00</div></div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-body"><div class="step-name">🌳 Lindenhof · 11:30 <a class="pin" href="https://maps.google.com/?q=Lindenhof+Zurich" target="_blank" rel="noopener">📍</a></div><div class="step-note">The quiet hilltop terrace where Zurich began as a Roman fort. Locals playing giant chess, the whole old town at your feet, free. Wander down through the <strong>Schipfe</strong><a class="pin" href="https://maps.google.com/?q=Schipfe+Zurich" target="_blank" rel="noopener">📍</a> riverside lanes after.</div></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-body"><div class="step-name">🍫 Sprüngli at Paradeplatz · 13:30 <a class="pin" href="https://maps.google.com/?q=Confiserie+Spr%C3%BCngli+Paradeplatz+Zurich" target="_blank" rel="noopener">📍</a></div><div class="step-note"><strong>Luxemburgerli</strong> macarons and hot chocolate, the proper send-off. Buy the take-home boxes here, they are the gift everyone hopes you brought.</div></div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-body"><div class="step-name">🛍️ Bahnhofstrasse for real, then choose your finale · 15:00</div><div class="step-note">It is Monday, everything is open: Swiss knives, watches to dream about, last souvenirs. Then a lake boat mini-cruise from Bürkliplatz<a class="pin" href="https://maps.google.com/?q=B%C3%BCrkliplatz+Zurich" target="_blank" rel="noopener">📍</a> the Kunsthaus<a class="pin" href="https://maps.google.com/?q=Kunsthaus+Z%C3%BCrich" target="_blank" rel="noopener">📍</a> or a long lakeside sit in the September sun.</div></div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-body"><div class="step-name">🥂 Final pack, then farewell dinner · 19:30</div><div class="step-note">Chocolates padded, documents out for the morning. Twenty days, four countries, one very good decision to do this together. Cheers, you two.</div></div></div>
+    <div class="food-block"><div class="food-label">🍽️ Breakfast · Lunch · Dinner</div>
+      <div class="food-row"><div class="food-time">Breakfast</div><div class="food-info">Late, near the hotel.</div></div>
+      <div class="food-row"><div class="food-time">Lunch</div><div class="food-info"><strong>Sprüngli café</strong> Paradeplatz. A sweet lunch is fully authorized today.</div></div>
+      <div class="food-row"><div class="food-time">Dinner</div><div class="food-info"><strong>Kronenhalle</strong><a class="pin" href="https://maps.google.com/?q=Kronenhalle+Zurich" target="_blank" rel="noopener">📍</a> for the iconic splurge (book ahead, Chagalls on the walls), or <strong>Zeughauskeller</strong><a class="pin" href="https://maps.google.com/?q=Zeughauskeller+Zurich" target="_blank" rel="noopener">📍</a> for the relaxed version.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="day" id="day20">
+  <div class="day-head"><div class="day-num">✈</div><div class="day-info"><div class="day-date">Tuesday · September 29</div><div class="day-title">Zurich → Singapore → Manila</div></div><div class="day-tag">Fly Home</div></div>
+  <div class="day-body">
+    <div class="train-note">
+      <div class="route"><span>ZRH</span><div class="line"><span>SQ 345</span></div><span>SIN T3</span></div>
+      🛫 <strong>11:40</strong> Zurich · 🛬 06:20 next morning · Boeing 777-300ER · layover 2h 30m
+      <div class="route" style="margin-top:12px"><span>SIN T3</span><div class="line"><span>SQ 910</span></div><span>MNL T3</span></div>
+      🛫 <strong>08:50</strong> Singapore · 🛬 <strong>12:45</strong> Manila · Wednesday Sep 30 · Airbus A350
+    </div>
+    <div class="time-block"><div class="time-label">07:30</div><div class="time-content"><h3>Breakfast, final sweep, checkout</h3></div></div>
+    <div class="time-block"><div class="time-label">08:20</div><div class="time-content"><h3>🚆 Zürich HB → Flughafen, 10 minutes <a class="dir" href="https://www.google.com/maps/dir/?api=1&origin=Z%C3%BCrich+HB&destination=Z%C3%BCrich+Flughafen&travelmode=transit" target="_blank" rel="noopener">🧭 Route</a></h3><p>Trains every few minutes, ~CHF 7. The easiest airport run in Europe. At the airport a comfortable 3 hours before departure.</p></div></div>
+    <div class="time-block"><div class="time-label">09:45</div><div class="time-content"><h3>🍫 Duty-free chocolate round + lounge</h3><p>Airport Swiss chocolate is genuinely well priced. Top up the stash.</p></div></div>
+    <div class="time-block"><div class="time-label">12:45</div><div class="time-content"><h3>🏠 Wednesday Sep 30 · Welcome home</h3><p>Twenty days, thirteen cities, four countries, world travelers. 💚</p></div></div>
+  </div>
+</div>
+
+<h2 class="section-title" id="bookings" style="scroll-margin-top:52px">Every Booking · <em>In One Place</em></h2>
+<p class="section-sub">Show any of these at check-in or immigration</p>
+
+<div class="hotel-card">
+  <div class="hotel-head"><span class="h-icon">✈️</span><span class="h-name">Singapore Airlines · 2 passengers</span><span class="h-badge">✅ FCBJHW</span></div>
+  <div class="h-row"><div class="h-key">SQ 921</div><div class="h-val">MNL → SIN · Tue Sep 9 · 18:35 → 22:20 · A350</div></div>
+  <div class="h-row"><div class="h-key">SQ 324</div><div class="h-val">SIN → AMS · Tue Sep 9 · 23:55 → 07:15 next day · 777-300ER</div></div>
+  <div class="h-row"><div class="h-key">SQ 345</div><div class="h-val">ZRH → SIN · Mon Sep 29 · 11:40 → 06:20 next day · 777-300ER</div></div>
+  <div class="h-row"><div class="h-key">SQ 910</div><div class="h-val">SIN → MNL · Wed Sep 30 · 08:50 → 12:45 · A350</div></div>
+</div>
+
+<div class="hotel-card">
+  <div class="hotel-head"><span class="h-icon">🏨</span><span class="h-name">All seven stays</span></div>
+  <div class="h-row"><div class="h-key">Amsterdam</div><div class="h-val"><strong>Residence Flower Market</strong> · Bloemenmarkt 91 · Sep 10–13 · 3 travelers · Booking.com <strong>5685419739</strong></div></div>
+  <div class="h-row"><div class="h-key">Antwerp</div><div class="h-val"><strong>a&amp;o Antwerpen Centraal</strong> · Pelikaanstraat 20 · Sep 13–16 · 4 travelers · Agoda · city tax EUR 42.96 pp at property</div></div>
+  <div class="h-row"><div class="h-key">Cologne</div><div class="h-val"><strong>Courtyard by Marriott</strong> · 2 rooms · Sep 16–19 · 4 travelers · Agoda <strong>6065490163</strong></div></div>
+  <div class="h-row"><div class="h-key">Interlaken</div><div class="h-val"><strong>Hapimag Resort Interlaken</strong> · Höheweg 95 · Sep 19–22 · Premium One-Bedroom Apartment · 3 adults · breakfast + WiFi included · Ref <strong>26070811133677957</strong> · Guest Ref <strong>1745353677</strong> · free cancel until Sep 1</div></div>
+  <div class="h-row"><div class="h-key">Zermatt</div><div class="h-val"><strong>Casa delle Stelle</strong> · Staldenstrasse 12 · Sep 22–25 · 3 travelers · Agoda <strong>1712044122</strong> · city tax CHF 36 at property</div></div>
+  <div class="h-row"><div class="h-key">Lucerne</div><div class="h-val"><strong>TOP Hotel Rothaus</strong> · Klosterstrasse 4 · Sep 25–27 · Agoda <strong>1712052248</strong> · Ref 85F8FA</div></div>
+  <div class="h-row"><div class="h-key">Zurich</div><div class="h-val"><strong>ibis Styles City Center</strong> · Stampfenbachstrasse 60 · Sep 27–29 · Agoda <strong>1712057510</strong> · Ref 2609270532</div></div>
+</div>
+
+<h2 class="section-title">Still To Book · <em>The Complete List</em></h2>
+<p class="section-sub">Everything not yet reserved, exactly where to book it, in the order to do it</p>
+
+<div class="hotel-card">
+  <div class="hotel-head"><span class="h-icon">🚆</span><span class="h-name">Trains · book these three legs, nothing else</span></div>
+  <div style="padding:6px 14px">
+  <div class="book-row"><span class="book-when bk-now">Now</span><div class="book-info"><strong>Amsterdam Zuid → Antwerp · Sun Sep 13</strong> · <strong>Eurocity Direct</strong>, 1h 23m, Saver from <strong>EUR 20</strong> pp at <a href="https://www.nsinternational.com/en/train/amsterdam-antwerp" target="_blank" rel="noopener">nsinternational.com</a> · search from "Amsterdam Zuid" (Metro 52 from Rokin gets you there in 10 min) · open seating, changeable up to 1 day before. Eurostar costs roughly double for 10 minutes saved.</div></div>
+  <div class="book-row"><span class="book-when bk-now">Now</span><div class="book-info"><strong>Antwerp → Cologne · Wed Sep 16</strong> · one through-ticket with the change in Brussels · book at <a href="https://int.bahn.de/en" target="_blank" rel="noopener">int.bahn.de</a> (Sparpreis Europa saver fare, seat reservation included on the ICE).</div></div>
+  <div class="book-row"><span class="book-when bk-now">Now</span><div class="book-info"><strong>Cologne → Interlaken Ost · Fri Sep 19</strong> · one through-ticket, ICE to Basel + Swiss leg included · book at <a href="https://int.bahn.de/en" target="_blank" rel="noopener">int.bahn.de</a>. Sparpreis fares start around EUR 60 and rise as seats sell: this is the most time-sensitive train of the trip.</div></div>
+  <div class="book-row"><span class="book-when bk-later">Skip</span><div class="book-info"><strong>Everything else runs ticket-machine simple:</strong> Belgian day trips (Brugge, Gent) in the SNCB app <strong>before boarding</strong> (no onboard sales since Jul 2026, EUR 500 fines) · German day trips (Düsseldorf, Bonn) in the DB Navigator app day-of · every Swiss train, day-of in the SBB app at half fare. No reservations exist or are needed.</div></div>
+  </div>
+</div>
+
+<div class="hotel-card">
+  <div class="hotel-head"><span class="h-icon">🎟️</span><span class="h-name">Tickets &amp; passes · the six that matter</span></div>
+  <div style="padding:6px 14px">
+  <div class="book-row"><span class="book-when bk-now">Jul 28</span><div class="book-info"><strong>Anne Frank House · Fri Sep 11, ~11:00 slot</strong> · only at <a href="https://www.annefrank.org/en/museum/tickets/" target="_blank" rel="noopener">annefrank.org</a>, never resellers · released ~6 weeks ahead, Tuesdays 10:00 AM Dutch time = <strong>4:00 PM Manila</strong>. Be online Tue Jul 28 sharp; if Sep 11 is not in that drop, it is in the next Tuesday's. EUR 16 pp.</div></div>
+  <div class="book-row"><span class="book-when bk-soon">Soon</span><div class="book-info"><strong>Van Gogh Museum · Fri Sep 11, ~15:00 slot</strong> · <a href="https://www.vangoghmuseum.nl/en/visit/tickets" target="_blank" rel="noopener">vangoghmuseum.nl</a> · EUR 24 pp · sells out days ahead in September, book the moment your Anne Frank slot is secured so the two do not clash.</div></div>
+  <div class="book-row"><span class="book-when bk-soon">Soon</span><div class="book-info"><strong>Swiss Half Fare Card × 3</strong> · buy on <a href="https://www.klook.com" target="_blank" rel="noopener">Klook</a> (pay in PHP, promo codes often bring it under the CHF 150 list price) or direct at <a href="https://www.sbb.ch/en/tickets-offers/tickets/half-fare-travelcard.html" target="_blank" rel="noopener">sbb.ch</a> · either way it arrives as a QR code by email · set validity start <strong>Sep 19</strong> at checkout. ⚠️ Klook is for the card ONLY: the mountain tickets themselves must be bought at the official sites below to get the half-fare rate.</div></div>
+  <div class="book-row"><span class="book-when bk-later">Aug 23+</span><div class="book-info"><strong>Jungfraujoch round trip × 3 · Sun Sep 20</strong> · <a href="https://www.jungfrau.ch/en-gb/jungfraujoch-top-of-europe/" target="_blank" rel="noopener">jungfrau.ch</a> · choose the Eiger Express route up, Wengen route down · tick the Half Fare price · seat reservation is included and mandatory. Book 2–4 weeks out, i.e. from late August; it is a Sunday, so do not leave it late.</div></div>
+  <div class="book-row"><span class="book-when bk-later">Sep 22</span><div class="book-info"><strong>Matterhorn Glacier Paradise × 3 · Wed Sep 23</strong> · <a href="https://www.matterhornparadise.ch/en" target="_blank" rel="noopener">matterhornparadise.ch</a> the evening before, once you see the forecast · Half Fare applies (~CHF 60 pp) · no seat reservations, just go early.</div></div>
+  <div class="book-row"><span class="book-when bk-later">Mid Sep</span><div class="book-info"><strong>Pilatus Golden Round Trip × 3 · Sat Sep 26</strong> · <a href="https://www.pilatus.ch/en/discover/golden-round-trip" target="_blank" rel="noopener">pilatus.ch</a> · covers boat + cogwheel + cable cars in one ticket · Half Fare applies · it is a Saturday, book 1–2 weeks ahead and take the first boat.</div></div>
+  <div class="book-row"><span class="book-when bk-later">Sep 14</span><div class="book-info"><strong>Ghent Altarpiece visit · Tue Sep 15, 11:00</strong> · <a href="https://www.sintbaafskathedraal.be/en/" target="_blank" rel="noopener">sintbaafskathedraal.be</a> · the AR-tour ticket (~EUR 16) is the one worth having · a day or two ahead is fine.</div></div>
+  </div>
+</div>
+
+<div class="hotel-card">
+  <div class="hotel-head"><span class="h-icon">🍽️</span><span class="h-name">Tables to reserve · five calls, five great nights</span></div>
+  <div style="padding:6px 14px">
+  <div class="book-row"><span class="book-when bk-later">Sep 10</span><div class="book-info"><strong>Moeders, Amsterdam · Fri Sep 12 dinner</strong> · online at <a href="https://www.moeders.com/en/" target="_blank" rel="noopener">moeders.com</a> · small room, books out fast, reserve as soon as you land.</div></div>
+  <div class="book-row"><span class="book-when bk-later">Sep 11</span><div class="book-info"><strong>De Arme Duivel, Antwerp · Sun Sep 13 dinner</strong> · call or book via their site/Facebook · <strong>confirm Sunday opening</strong>; if closed, any Grote Markt terrace saves the night.</div></div>
+  <div class="book-row"><span class="book-when bk-later">Aug</span><div class="book-info"><strong>Chez Vrony, Findeln · Wed Sep 24 lunch</strong> · the Instagram-famous Matterhorn farmhouse: book online at <a href="https://chezvrony.ch" target="_blank" rel="noopener">chezvrony.ch</a> up to 3 months ahead, or call from 08:30 that day · no-show fee CHF 50, so lock the date you are sure of.</div></div>
+  <div class="book-row"><span class="book-when bk-later">Sep 19</span><div class="book-info"><strong>Whymper-Stube, Zermatt · Mon Sep 22 dinner</strong> · <a href="https://www.whymper-stube.ch" target="_blank" rel="noopener">whymper-stube.ch</a> · the famous fondue cellar, a few days ahead is enough on a Monday.</div></div>
+  <div class="book-row"><span class="book-when bk-later">Sep 20</span><div class="book-info"><strong>Kronenhalle, Zurich · Mon Sep 28 farewell dinner</strong> · <a href="https://www.kronenhalle.ch" target="_blank" rel="noopener">kronenhalle.ch</a> · the one splurge table of the trip, book about a week out and ask for the Chagall room.</div></div>
+  <div class="book-row"><span class="book-when bk-later">Daily</span><div class="book-info"><strong>Hapimag breakfast, Interlaken</strong> · not online: reserve <strong>at reception the evening before, every evening</strong>, the restaurant takes no walk-ins. Book the earliest slot for the Sep 20 Jungfraujoch morning.</div></div>
+  </div>
+</div>
+
+<div class="hotel-card">
+  <div class="hotel-head"><span class="h-icon">📱</span><span class="h-name">Before you fly · small but essential</span></div>
+  <div style="padding:6px 14px">
+  <div class="book-row"><span class="book-when bk-soon">Soon</span><div class="book-info"><strong>Europe eSIM × 3</strong> that explicitly includes <strong>Switzerland</strong> (not all "Europe" plans do) · <a href="https://www.klook.com" target="_blank" rel="noopener">Klook</a> Europe eSIM (peso pricing) or Airalo "Eurolink", ~USD 20–30 for 20 days · install before departure, activate on landing.</div></div>
+  <div class="book-row"><span class="book-when bk-soon">Soon</span><div class="book-info"><strong>Apps to install now:</strong> SBB Mobile (your Swiss lifeline), DB Navigator, SNCB, NS International, plus this guide saved offline.</div></div>
+  <div class="book-row"><span class="book-when bk-later">Check</span><div class="book-info"><strong>Card check:</strong> tell the bank about 4 countries · confirm the Visa ····5193 has headroom for the Hapimag pay-later charge (~USD 1,958) on its payment date.</div></div>
+  </div>
+</div>
+
+<h2 class="section-title" id="tips" style="scroll-margin-top:52px">Good To Know · <em>Money &amp; Practical</em></h2>
+<p class="section-sub">The small stuff that makes the trip smooth</p>
+
+<div class="tips">
+  <div class="tip-card"><h4>💶 Currencies</h4><p>NL, BE and DE use the <strong>euro</strong>. Switzerland uses <strong>Swiss francs</strong>. Cards and phone-tap work almost everywhere: ~EUR 150 + CHF 150 in cash between you is plenty. At ATMs always choose "charge in local currency".</p></div>
+  <div class="tip-card"><h4>🏨 Pay-at-property</h4><p>Antwerp city tax <strong>EUR 42.96 pp</strong> · Interlaken resort fee <strong>~CHF 31.50</strong> · Zermatt city tax <strong>CHF 36</strong>. Small amounts, zero surprises at reception.</p></div>
+  <div class="tip-card"><h4>🧥 September weather</h4><p>Lowlands 12–20°C with drizzle chances, bring the compact umbrella. Swiss valleys 8–18°C. Summits at or below <strong>freezing</strong>: fleece, windproof jacket, beanie, gloves. Comfortable shoes are the most important item in the suitcase.</p></div>
+  <div class="tip-card"><h4>📱 Connectivity</h4><p>One <strong>Europe-region eSIM that includes Switzerland</strong> covers all 20 days. Apps to install now: NS (NL), SNCB (BE), DB Navigator (DE) and <strong>SBB</strong>, the one you will live in for ten days.</p></div>
+  <div class="tip-card"><h4>🚆 Trains, simply</h4><p>Only three legs need advance booking: the Eurocity Direct to Antwerp (nsinternational.com) and the two int.bahn.de legs, Antwerp → Cologne and Cologne → Interlaken. Everything else, including all Swiss trains, is turn-up-and-go with the Half Fare Card.</p></div>
+  <div class="tip-card"><h4>🚨 Essentials</h4><p>Emergency number is <strong>112</strong> everywhere. Pharmacies show a green cross. Tap water is drinkable in all four countries, Swiss street fountains too. Shops close <strong>Sundays</strong> in Germany and Switzerland, stations and airports excepted.</p></div>
+</div>
+
+</div>
+
+<footer>
+  <p>Your personal trip guide, made with care 🇳🇱🇧🇪🇩🇪🇨🇭</p>
+  <p style="margin-top:4px"><strong>September 9 – 30, 2026 · Our European Adventure</strong></p>
+  <p style="margin-top:4px">Jenny &amp; Prince John · four countries, one great story</p>
+</footer>
+
+<button id="totop" aria-label="Back to top">↑</button>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav');
+  var links=[].slice.call(nav.querySelectorAll('a'));
+  var map={};
+  links.forEach(function(a){var id=a.getAttribute('href').slice(1);var el=document.getElementById(id);if(el)map[id]={a:a,el:el}});
+  var obs=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){
+        links.forEach(function(a){a.classList.remove('active')});
+        var m=map[e.target.id];
+        if(m){m.a.classList.add('active');
+          var r=m.a.getBoundingClientRect(),n=nav.getBoundingClientRect();
+          if(r.left<n.left||r.right>n.right){nav.scrollTo({left:m.a.offsetLeft-n.width/2+r.width/2,behavior:'smooth'});}
+        }
+      }
+    });
+  },{rootMargin:'-15% 0px -75% 0px'});
+  Object.keys(map).forEach(function(id){obs.observe(map[id].el)});
+
+  var bar=document.getElementById('progress'),top=document.getElementById('totop');
+  window.addEventListener('scroll',function(){
+    var h=document.documentElement,max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+    top.classList.toggle('show',h.scrollTop>600);
+  },{passive:true});
+  top.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+})();
+</script>
+
+</body>
+</html>
